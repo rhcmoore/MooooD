@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TEst</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <form class="entry-area">
+                <div class="form-group">
+                    <label for="text-submit">Submit text</label>
+                    <input class="form-control" id="text-submit" placeholder="Write your entry here">
+                </div>
+                <div class="form-group">
+                    <label for="image-submit">Submit image URL</label>
+                    <input class="form-control" id="image-submit" placeholder="https://images.unsplash.com/photo-1484804959297-65e7c19d7c9f">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>Text feedback</h3>
+                <p>Anger: <span id="text-anger"></span></p>
+                <p>Fear: <span id="text-fear"></span></p>
+                <p>Joy: <span id="text-joy"></span></p>
+                <p>Sadness: <span id="text-sadness"></span></p>
+                <p>Surprise: <span id="text-surprise"></span></p>
+            </div>
+            <div class="col-lg-6">
+                <h3>Image feedback</h3>
+                <p>Anger: <span id="image-anger"></span></p>
+                <p>Fear: <span id="image-fear"></span></p>
+                <p>Joy: <span id="image-joy"></span></p>
+                <p>Sadness: <span id="image-sadness"></span></p>
+                <p>Surprise: <span id="image-surprise"></span></p>
+            </div>
+        </div>
+    </div>
+
+
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $(".entry-area").submit(function(event) {
+                event.preventDefault();
+                // grab submitted text and image
+                var journalPost = $("#text-submit").val();
+                var imagePost = $("#image-submit").val();
+                console.log("journalPost" + journalPost, "imagePost" + imagePost);
+                // create query URLs
+                var textQueryURL = "https://apiv2.indico.io/emotion/?api_key=d292aaf451b50aad46bd779bb711df7d&data=" + journalPost;
+                var faceQueryURL = "https://api-us.faceplusplus.com/facepp/v3/detect?api_key=PYtXrUAv_8smka-0NHt41JdBmZ1jdL01&api_secret=OBmaSYKR7URc3NiFQgkjWNpIYafOU_35&return_attributes=emotion&image_url=" + imagePost;
+                
+                // AJAX text call
+                $.ajax({
+                    url: textQueryURL,
+                    method: "GET"
+                }).then(function(response) {
+                    // log emotions from response
+                    console.log("Text results: ", response.results);
+                    // Set variables from response
+                    var textAnger = Number((response.results.anger * 100).toFixed(2));
+                    var textFear = Number((response.results.fear * 100).toFixed(2))
+                    var textJoy = Number((response.results.joy * 100).toFixed(2))
+                    var textSadness = Number((response.results.sadness * 100).toFixed(2))
+                    var textSurprise = Number((response.results.surprise * 100).toFixed(2))
+                    // Update DOM
+                    $("#text-anger").text(textAnger + "%");
+                    $("#text-fear").text(textFear + "%");
+                    $("#text-joy").text(textJoy + "%");
+                    $("#text-sadness").text(textSadness + "%");
+                    $("#text-surprise").text(textSurprise + "%");
+                });
+
+                // AJAX image call
+                $.ajax({
+                    url: faceQueryURL,
+                    method: "POST"
+                }).then(function(response) {
+                    // log emotions from response
+                    console.log("Image results: ", response.faces[0].attributes.emotion);
+                    // Set variables from response
+                    var res = response.faces[0].attributes.emotion;
+                    var imageAnger = Number((res.anger).toFixed(2));
+                    var imageFear = Number((res.fear + res.disgust).toFixed(2));
+                    var imageJoy = Number((res.happiness + res.neutral).toFixed(2));
+                    var imageSadness = Number((res.sadness).toFixed(2));
+                    var imageSurprise = Number((res.surprise).toFixed(2));
+                    // Update DOM
+                    $("#image-anger").text(imageAnger + "%");
+                    $("#image-fear").text(imageFear + "%");
+                    $("#image-joy").text(imageJoy + "%");
+                    $("#image-sadness").text(imageSadness + "%");
+                    $("#image-surprise").text(imageSurprise + "%");
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>
