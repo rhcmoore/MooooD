@@ -38,6 +38,8 @@
                 <p>Joy: <span id="image-joy"></span></p>
                 <p>Sadness: <span id="image-sadness"></span></p>
                 <p>Surprise: <span id="image-surprise"></span></p>
+                <p>Disgust: <span id="image-disgust"></span></p>
+                <p>Neutral: <span id="image-neutral"></span></p>
             </div>
         </div>
     </div>
@@ -54,7 +56,8 @@
                 // grab submitted text and image
                 var journalPost = $("#text-submit").val();
                 var imagePost = $("#image-submit").val();
-                console.log("journalPost" + journalPost, "imagePost" + imagePost);
+                console.log("journalPost:   " + journalPost);
+                console.log("imagePost:   " + imagePost);
                 // create query URLs
                 var textQueryURL = "https://apiv2.indico.io/emotion/?api_key=d292aaf451b50aad46bd779bb711df7d&data=" + journalPost;
                 var faceQueryURL = "https://api-us.faceplusplus.com/facepp/v3/detect?api_key=PYtXrUAv_8smka-0NHt41JdBmZ1jdL01&api_secret=OBmaSYKR7URc3NiFQgkjWNpIYafOU_35&return_attributes=emotion&image_url=" + imagePost;
@@ -90,16 +93,20 @@
                     // Set variables from response
                     var res = response.faces[0].attributes.emotion;
                     var imageAnger = Number((res.anger).toFixed(2));
-                    var imageFear = Number((res.fear + res.disgust).toFixed(2));
-                    var imageJoy = Number((res.happiness + res.neutral).toFixed(2));
+                    var imageFear = Number((res.fear).toFixed(2));
+                    var imageJoy = Number((res.happiness).toFixed(2));
                     var imageSadness = Number((res.sadness).toFixed(2));
                     var imageSurprise = Number((res.surprise).toFixed(2));
+                    var imageDisgust = Number((res.disgust).toFixed(2));
+                    var imageNeutral = Number((res.neutral).toFixed(2));
                     // Update DOM
                     $("#image-anger").text(imageAnger + "%");
                     $("#image-fear").text(imageFear + "%");
                     $("#image-joy").text(imageJoy + "%");
                     $("#image-sadness").text(imageSadness + "%");
                     $("#image-surprise").text(imageSurprise + "%");
+                    $("#image-disgust").text(imageDisgust + "%");
+                    $("#image-neutral").text(imageNeutral + "%");
                 });
             });
         });
