@@ -21,7 +21,7 @@ body {
 
 
 .content-section {
-  padding-top: 7.5rem;
+  padding-top: 3.5rem;
   padding-bottom: 7.5rem;
 }
 
@@ -44,6 +44,10 @@ h6 {
   font-weight: 700;
   color: #ecb807;
   font-family: 'Baloo Bhaijaan', cursive;
+}
+
+.h2 {
+  margin-top: -60px;
 }
 
 .text-faded {
@@ -90,19 +94,13 @@ h6 {
   font-weight: 800;
 }
 
-img {
+#logo {
+  margin-left: 375px;
   height: 400px;
   width: 700px;
   margin-right: 200px;
-  margin-top: 5px;
+  margin-top: -500px;
   position: absolute;
-  
-
-}
-
-#logo {
-  margin-left: 375px;
-  margin-top: 200px;
 }
 
 #bgLogo {
@@ -320,31 +318,12 @@ img {
 }
 
 
-
-#iconWrite{
-  background-image: url(../img/001-writing-tool.png);
+.icon { 
   width: 100px;
   height: 100px;
-  background-size: 100px;
-  background-repeat: no-repeat;
-  
-}
-
-#iconCamera{
-  background-image: url(../img/002-camera.png);
-  width: 100px;
-  height: 100px;
-  background-size: 100px;
-  background-repeat: no-repeat;
-  
-}
-
-#iconResults{
-  background-image: url(../img/003-laptop.png);
-  width: 100px;
-  height: 100px;
-  background-size: 100px;
-  background-repeat: no-repeat;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   
 }
 
