@@ -232,22 +232,41 @@ img {
 }
 
 .callout {
-  padding: 15rem 0;
+  padding: 55px;
   background:url("../img/pos3.0.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  
+}
+#journalSubmit {
+ color: white;
+ font-family: 'Baloo Bhaijaan', cursive;
+ font-weight: 200;
+ font-size: 30pt;
+ text-shadow:2px 2px rgb(240, 24, 24);
+
 }
 
-#submit {
-  align-items: center;
-}
-
-.callout h2 {
-  font-size: 3.5rem;
+#journalSubmit1 {
   font-weight: 700;
-  display: block;
-  max-width: 30rem;
+  color: #ecb807;
+  font-family: 'Baloo Bhaijaan', cursive;
+  text-shadow: 3px 3px rgb(49, 46, 46) 
+}
+
+#text-submit {
+  font-family: 'Indie Flower', cursive;
+  font-size: 11pt;
+}
+
+.form-control {
+  opacity: .5;
+}
+
+/* this display inline is not working */
+#inLine {
+  display: inline !important;
 }
 
 .portfolio-item {
