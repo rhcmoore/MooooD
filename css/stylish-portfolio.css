@@ -16,7 +16,9 @@ body {
 
 .btn-xl {
   padding: 1.25rem 2.5rem;
+  
 }
+
 
 .content-section {
   padding-top: 7.5rem;
@@ -32,6 +34,7 @@ body {
   text-transform: uppercase;
 }
 
+
 h1,
 h2,
 h3,
@@ -39,6 +42,8 @@ h4,
 h5,
 h6 {
   font-weight: 700;
+  color: #ecb807;
+  font-family: 'Baloo Bhaijaan', cursive;
 }
 
 .text-faded {
@@ -85,25 +90,34 @@ h6 {
   font-weight: 800;
 }
 
-.masthead {
+img {
+  height: 400px;
+  width: 700px;
+  margin-right: 200px;
+  margin-top: 5px;
+  position: absolute;
+  
+
+}
+
+#logo {
+  margin-left: 375px;
+  margin-top: 80px;
+}
+
+#bgLogo {
+  filter: blur(2.5px);
   min-height: 30rem;
-  position: relative;
   display: table;
   width: 100%;
-  height: auto;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.1)), to(rgba(255, 255, 255, 0.1))), url("../img/bg-masthead.jpg");
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/bg-masthead.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 100%;
+  object-fit: cover;
+  margin-top: 0px;
 }
 
 .masthead h1 {
-  font-size: 4rem;
-  margin: 0;
-  padding: 0;
+  height: 10px;
+  width: 100px;
 }
 
 @media (min-width: 992px) {
@@ -218,11 +232,14 @@ h6 {
 
 .callout {
   padding: 15rem 0;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.1)), to(rgba(255, 255, 255, 0.1))), url("../img/bg-callout.jpg");
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/bg-callout.jpg");
+  background:url("../img/pos3.0.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+#submit {
+  align-items: center;
 }
 
 .callout h2 {
@@ -301,6 +318,12 @@ h6 {
   }
 }
 
+#bottomLogo {
+  height: 300px;
+  width: 1500px;
+  margin-top: -140px;
+}
+
 footer.footer {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -326,6 +349,7 @@ footer.footer .social-link:hover {
 
 a {
   color: #1D809F;
+
 }
 
 a:hover, a:focus, a:active {
@@ -344,8 +368,8 @@ a:hover, a:focus, a:active {
 }
 
 .btn-secondary {
-  background-color: #ecb807 !important;
-  border-color: #ecb807 !important;
+  background-color: #ba9106 !important;
+  border-color: #ba9106 !important;
   color: #fff !important;
 }
 
@@ -375,3 +399,4 @@ a:hover, a:focus, a:active {
 .text-secondary {
   color: #ecb807 !important;
 }
+
