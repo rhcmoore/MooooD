@@ -57,6 +57,22 @@
         <li class="sidebar-nav-item">
           <a class="js-scroll-trigger" href="#contact">Contact Us</a>
         </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#signup" id="signUp">Sign Up</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <input type="email" class="form-control" id="emailInput" placeholder="email">
+        </li>
+        <li class="sidebar-nav-item">
+          <input type="password" class="form-control" id="passInput" placeholder="password">
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" id="logIn">Login</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" id="logOut">Logout</a>
+        </li>
+
       </ul>
     </nav>
 
@@ -300,13 +316,58 @@
                 messagingSenderId: "674088000857"
             };
             firebase.initializeApp(config);
+            // =========== AUTHENTICATION ==============
+
+            var database = firebase.database();
+            var auth = firebase.auth();
+            var userID;
 
             // Thanks to Mike Heavers (@mheavers) for his Medium post:
             // https://medium.com/@mheavers/setting-up-a-basic-file-upload-feature-for-your-static-website-with-just-javascript-using-firebase-32464580d8bb
             const storageService = firebase.storage();
             const storageRef = storageService.ref();
 
-            var base = 10;
+            //Login (on page)
+            $(document).on("click", "#logIn", function() {
+                event.preventDefault();
+                var email = $("#emailInput").val();
+                var pass = $("#passInput").val();
+                var auth = firebase.auth();
+                var promise = auth.signInWithEmailAndPassword(email, pass);
+                promise.catch(e => console.log(e.message));
+            });
+
+            //Signup (on page)
+            $(document).on("click", "#signUp", function() {
+                event.preventDefault();
+                var email = $("#emailInput").val();
+                var pass = $("#passInput").val();
+                var auth = firebase.auth();
+                var promise = auth.createUserWithEmailAndPassword(email, pass);
+                promise.catch(e => console.log(e.message));
+            });
+
+            //Logout(on page)
+            $(document).on("click", "#logOut", function(event) {
+                event.preventDefault();
+                firebase.auth().signOut();
+            });
+
+            //Detects whether or not user has logged in
+            auth.onAuthStateChanged(firebaseUser => {
+              if (firebaseUser) {
+                userID = firebaseUser.uid
+
+                $(document).on("click", "#kavivanar", function() {
+                    console.log("I work");
+                    fontPref = '"Kavivanar", cursive';
+                    database.ref().child("user/" + userID + "/Font").set({
+                        font: fontPref,
+                    });
+                });
+              };
+            });
+                    
             // The handleFileUploadChange function gets triggered any time someone selects a new file via the upload via the Choose File upload button.
             $('.file-select').on('change', handleFileUploadChange);
             let selectedFile;
@@ -383,7 +444,8 @@
                                     $("#image-surprise").text(imageSurprise + "%");
                                     $("#image-disgust").text(imageDisgust + "%");
                                     $("#image-neutral").text(imageNeutral + "%");
-
+                                    
+                                    var base = 10;
                                     // create data for the image series
                                     var data_2 = [
                                         {x: "Anger", value: imageAnger + base},
@@ -449,18 +511,13 @@
                     handleFileUploadSubmit(event);
                 }
                 
-                
-
                 // ================ TEXT HANDLING ==========================
 
                 // grab submitted text and image
                 var journalPost = $("#text-submit").val();
-                // var imagePost = $("#image-submit").val();
                 console.log("journalPost:   " + journalPost);
-                // console.log("imagePost:   " + imagePost);
                 // create query URLs
                 var textQueryURL = "https://apiv2.indico.io/emotion/?api_key=d292aaf451b50aad46bd779bb711df7d&data=" + journalPost;
-                // var faceQueryURL = "https://api-us.faceplusplus.com/facepp/v3/detect?api_key=PYtXrUAv_8smka-0NHt41JdBmZ1jdL01&api_secret=OBmaSYKR7URc3NiFQgkjWNpIYafOU_35&return_attributes=emotion&image_url=" + imagePost;
                 
                 // AJAX call to Indico (text)
                 $.ajax({
@@ -481,7 +538,7 @@
                     $("#text-joy").text(textJoy + "%");
                     $("#text-sadness").text(textSadness + "%");
                     $("#text-surprise").text(textSurprise + "%");
-
+                    var base = 10;
                     // create data for the text series
                     var data_1 = [
                             {x: "Anger", value: textAnger + base},
@@ -496,6 +553,7 @@
                     chart.draw();
                 });
             });
+            
         });
     </script>
   </body>
