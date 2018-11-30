@@ -95,11 +95,11 @@ h6 {
 }
 
 #logo {
-  margin-left: 368px;
+  margin-left: 480px;
   height: 400px;
   width: 700px;
   margin-right: 280px;
-  margin-top: -600px;
+  margin-top: -500px;
   position: absolute;
 }
 
@@ -235,13 +235,40 @@ h6 {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+ 
 }
+
+.form-control {
+  opacity: .5;
+ }
+
+.file-select {
+  color: grey;
+  font-family: 'Autour One', cursive;
+  margin-top: 20px;
+  background-color: black;
+
+
+}
+
+
+
 #journalSubmit {
-  color: white;
-  font-family: 'Baloo Bhaijaan', cursive;
+  color: orange;
+  font-family: 'Autour One', cursive;
   font-weight: 200;
-  font-size: 30pt;
-  text-shadow:2px 2px rgb(240, 24, 24);
+  font-size: 45pt;
+  text-shadow:1px 1px black;
+}
+
+#journalSubmit1 {
+  color: orange;
+  font-family: 'Autour One', cursive;
+  text-shadow:1px 1px black;
+}
+
+#text-submit {
+  font-family: 'Indie Flower';
 }
 
 #submit {
