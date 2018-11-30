@@ -93,6 +93,7 @@
             };
 
             var ui = new firebaseui.auth.AuthUI(firebase.auth());
+            console.log(ui);
             // The start method will wait until the DOM is loaded.
             ui.start('#firebaseui-auth-container', uiConfig);
             
@@ -110,6 +111,7 @@
                 });
             }
             var anonymousUser = firebase.auth().currentUser;
+            console.log(anonymousUser);
             //Get the current userID
             var userId = firebase.auth().currentUser.uid;
 //            Get the user data
