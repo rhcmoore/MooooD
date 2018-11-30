@@ -16,12 +16,20 @@
             <form class="entry-area">
                 <div class="form-group">
                     <label for="text-submit">Submit text</label>
-                    <textarea rows="4" cols="50" class="form-control" id="text-submit" type="text" placeholder="Write your entry here"></textarea>
+                    <textarea rows="4" cols="50" class="form-control" id="text-submit" type="text" placeholder="Write your entry here" required></textarea>
                 </div>
+                <h3>AND</h3>
+                <div class="form-group">
+                    <label for="image-submit">Submit image URL</label>
+                    <input class="form-control" id="image-submit" placeholder="https://i.imgur.com/U8hMl0i.jpg">
+                </div>
+                <h4>OR</h4>
                 <input type="file" class="file-select" accept="image/*"/>
+                <br> <br>
                 <button type="submit" class="btn btn-primary file-submit">Submit</button>
-                
+                <hr>
             </form>
+            
         </div>
         <div class="row">
             <div class="col-lg-6">
@@ -86,7 +94,7 @@
                 // prevent refresh
                 event.preventDefault();
                 
-                // =============== Function to manage the IMAGE submission =============
+                // =============== IMAGE Handling =============
                 function handleFileUploadSubmit(e) {
                     // .child creates a child directory (called images), and .put places the file inside this directory
                     const uploadTask = storageRef.child(`images/${selectedFile.name}`).put(selectedFile);
@@ -168,10 +176,57 @@
                         });
                     });
                 };
-                handleFileUploadSubmit(event);
+                // Handling both link submission & local image select (link submission takes precedence)
+                if ($("#image-submit").val()) {
+                    var submittedLink = $("#image-submit").val();
+                    console.log(submittedLink);
+                    var queryURL = "https://api-us.faceplusplus.com/facepp/v3/detect?api_key=PYtXrUAv_8smka-0NHt41JdBmZ1jdL01&api_secret=OBmaSYKR7URc3NiFQgkjWNpIYafOU_35&return_attributes=emotion&image_url=" + submittedLink;
+
+                    // AJAX call to Face++ (image)
+                    $.ajax({
+                        url: queryURL,
+                        method: "POST"
+                    }).then(function(response) {
+                        // log emotions from response
+                        console.log("Image results: ", response.faces[0].attributes.emotion);
+                        // Set variables from response
+                        var res = response.faces[0].attributes.emotion;
+                        var imageAnger = Number((res.anger).toFixed(2));
+                        var imageFear = Number((res.fear).toFixed(2));
+                        var imageJoy = Number((res.happiness).toFixed(2));
+                        var imageSadness = Number((res.sadness).toFixed(2));
+                        var imageSurprise = Number((res.surprise).toFixed(2));
+                        var imageDisgust = Number((res.disgust).toFixed(2));
+                        var imageNeutral = Number((res.neutral).toFixed(2));
+                        // Update DOM
+                        $("#image-anger").text(imageAnger + "%");
+                        $("#image-fear").text(imageFear + "%");
+                        $("#image-joy").text(imageJoy + "%");
+                        $("#image-sadness").text(imageSadness + "%");
+                        $("#image-surprise").text(imageSurprise + "%");
+                        $("#image-disgust").text(imageDisgust + "%");
+                        $("#image-neutral").text(imageNeutral + "%");
+
+                        // create data for the image series
+                        var data_2 = [
+                            {x: "Anger", value: imageAnger + base},
+                            {x: "Fear", value: imageFear + base},
+                            {x: "Joy", value: imageJoy + base},
+                            {x: "Sadness", value: imageSadness + base},
+                            {x: "Surprise", value: imageSurprise + base},
+                        ];
+                        chart = anychart.radar()
+                        var series1 = chart.area(data_2);
+                        chart.container("imgChart");
+                        chart.draw();
+                    });
+                } else {
+                    handleFileUploadSubmit(event);
+                }
+                
                 
 
-                // ================ TEXT HANDLING +==========================
+                // ================ TEXT HANDLING ==========================
 
                 // grab submitted text and image
                 var journalPost = $("#text-submit").val();
