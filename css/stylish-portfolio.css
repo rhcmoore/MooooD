@@ -102,7 +102,7 @@ img {
 
 #logo {
   margin-left: 375px;
-  margin-top: 80px;
+  margin-top: 200px;
 }
 
 #bgLogo {
@@ -113,6 +113,7 @@ img {
   height: 100%;
   object-fit: cover;
   margin-top: 0px;
+  
 }
 
 .masthead h1 {
@@ -317,6 +318,37 @@ img {
     clip-path: inset(2rem);
   }
 }
+
+
+
+#iconWrite{
+  background-image: url(../img/001-writing-tool.png);
+  width: 100px;
+  height: 100px;
+  background-size: 100px;
+  background-repeat: no-repeat;
+  
+}
+
+#iconCamera{
+  background-image: url(../img/002-camera.png);
+  width: 100px;
+  height: 100px;
+  background-size: 100px;
+  background-repeat: no-repeat;
+  
+}
+
+#iconResults{
+  background-image: url(../img/003-laptop.png);
+  width: 100px;
+  height: 100px;
+  background-size: 100px;
+  background-repeat: no-repeat;
+  
+}
+
+
 
 #bottomLogo {
   height: 300px;
