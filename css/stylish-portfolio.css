@@ -237,6 +237,12 @@ h6 {
   background-size: cover;
  
 }
+
+#results-callout {
+  background-image: url('https://s22295.pcdn.co/wp-content/uploads/pitching2.jpg');
+  color: white;
+}
+
 .form-control {
   opacity: .5;
  }
