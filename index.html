@@ -137,64 +137,65 @@
         </div>
       </div>
     </section>
-
-    <!-- Callout -->
-    <section class="callout">
-        <div class="container text-center">
-          <div class="row">
-              <form class="entry-area">
-                  <div class="form-group">
-                      <label for="text-submit">Submit text</label>
-                      <textarea rows="4" cols="80" class="form-control" id="text-submit" type="text" placeholder="Write your entry here" required></textarea>
-                  </div>
-                  <h3>AND</h3>
-                  <div class="form-group">
-                      <label for="image-submit">Submit image URL</label>
-                      <input class="form-control" id="image-submit" placeholder="Add URL Here">
-                  </div>
-                  <h4>OR</h4>
-                  <input type="file" class="file-select" accept="image/*"/>
-                  <br> <br>
-                  <button type="submit" class="btn btn-warning file-submit">Submit</button>
-                  <hr>
-              </form>
-          </div>
-         
-        </div>
-      </section>
-      <section class="callout" style="background-image: url('https://s22295.pcdn.co/wp-content/uploads/pitching2.jpg')">
-        <div class="container text-center">
-          <div class="row">
-              <div class="col-lg-6">
-              </div>
-              <section class="col-lg-6" style="background-color: white">
-                <div>
-                    <h3>Text feedback</h3>
-                    <p>Anger: <span id="text-anger"></span></p>
-                    <p>Fear: <span id="text-fear"></span></p>
-                    <p>Joy: <span id="text-joy"></span></p>
-                    <p>Sadness: <span id="text-sadness"></span></p>
-                    <p>Surprise: <span id="text-surprise"></span></p>
-                </div>
-                <div id="textChart">
-                </div>
-                <div>
-                    <h3>Image feedback</h3>
-                    <p>Anger: <span id="image-anger"></span></p>
-                    <p>Fear: <span id="image-fear"></span></p>
-                    <p>Joy: <span id="image-joy"></span></p>
-                    <p>Sadness: <span id="image-sadness"></span></p>
-                    <p>Surprise: <span id="image-surprise"></span></p>
-                    <p>Disgust: <span id="image-disgust"></span></p>
-                    <p>Neutral: <span id="image-neutral"></span></p>
-                </div>
-                <div id="imgChart">
-                </div>
-              </section>
-          </div>
-        </div>
-      </section>
    
+      <!-- Callout -->
+  <section class="callout">
+    <div class="container text-center">
+      <div class="row">
+        <form class="entry-area">
+          <div class="form-group">
+            <label for="text-submit" id="journalSubmit">Vent to your Journal</label>
+            <textarea rows="12" cols="80" class="form-control" id="text-submit" type="text" placeholder="Describe a current situation or feeling"
+              required></textarea>
+          </div>
+          <h3 id="journalSubmit1">&</h3>
+          <div class="form-group">
+            <input class="form-control" id="image-submit" placeholder="Add Image URL Here">
+            <label for="image-submit" id="journalSubmit">Submit image URL</label>
+          </div>
+          <div>
+            <h4 id="journalSubmit1">OR</h4>
+            <input type="file" class="file-select" accept="image/*"/>
+            <button type="button" class="btn btn-warning">Submit</button>
+
+            <hr>
+        </form>
+      </div>
+
+    </div>
+  </section>
+  <section class="callout" style="background-image: url('https://s22295.pcdn.co/wp-content/uploads/pitching2.jpg')">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-6">
+        </div>
+        <section class="col-lg-6">
+          <div>
+            <h3>Text feedback</h3>
+            <p>Anger: <span id="text-anger"></span></p>
+            <p>Fear: <span id="text-fear"></span></p>
+            <p>Joy: <span id="text-joy"></span></p>
+            <p>Sadness: <span id="text-sadness"></span></p>
+            <p>Surprise: <span id="text-surprise"></span></p>
+          </div>
+          <div id="textChart">
+          </div>
+          <div>
+            <h3>Image feedback</h3>
+            <p>Anger: <span id="image-anger"></span></p>
+            <p>Fear: <span id="image-fear"></span></p>
+            <p>Joy: <span id="image-joy"></span></p>
+            <p>Sadness: <span id="image-sadness"></span></p>
+            <p>Surprise: <span id="image-surprise"></span></p>
+            <p>Disgust: <span id="image-disgust"></span></p>
+            <p>Neutral: <span id="image-neutral"></span></p>
+          </div>
+          <div id="imgChart">
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
 
     <!-- Portfolio (MEMBER ONLY SECTION)-->
     <section class="content-section" id="portfolio">
@@ -203,7 +204,7 @@
             <h3 class="text-secondary mb-0">Portfolio</h3>
             <h2 class="mb-5">Recent Projects</h2>
           </div>
-          <div class="row no-gutters">
+          <!-- <div class="row no-gutters">
             <div class="col-lg-6">
               <a class="portfolio-item" href="#">
                 <span class="caption">
@@ -215,40 +216,7 @@
                 <img class="img-fluid" src="img/portfolio-1.jpg" alt="">
               </a>
             </div>
-            <div class="col-lg-6">
-              <a class="portfolio-item" href="#">
-                <span class="caption">
-                  <span class="caption-content">
-                    <h2>Ice Cream</h2>
-                    <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
-                  </span>
-                </span>
-                <img class="img-fluid" src="img/portfolio-2.jpg" alt="">
-              </a>
-            </div>
-            <div class="col-lg-6">
-              <a class="portfolio-item" href="#">
-                <span class="caption">
-                  <span class="caption-content">
-                    <h2>Strawberries</h2>
-                    <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
-                  </span>
-                </span>
-                <img class="img-fluid" src="img/portfolio-3.jpg" alt="">
-              </a>
-            </div>
-            <div class="col-lg-6">
-              <a class="portfolio-item" href="#">
-                <span class="caption">
-                  <span class="caption-content">
-                    <h2>Workspace</h2>
-                    <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
-                  </span>
-                </span>
-                <img class="img-fluid" src="img/portfolio-4.jpg" alt="">
-              </a>
-            </div>
-          </div>
+          </div> -->
         </div>
       </section>
 
@@ -302,260 +270,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
-
-    <script>
-
-        $(document).ready(function() {
-            // Initialize Firebase
-            var config = {
-                apiKey: "AIzaSyDoUt2cvuKUgc1xp5nGvCbvP3aVWfrlvNI",
-                authDomain: "mood-2414d.firebaseapp.com",
-                databaseURL: "https://mood-2414d.firebaseio.com",
-                projectId: "mood-2414d",
-                storageBucket: "mood-2414d.appspot.com",
-                messagingSenderId: "674088000857"
-            };
-            firebase.initializeApp(config);
-            // =========== AUTHENTICATION ==============
-
-            var database = firebase.database();
-            var auth = firebase.auth();
-            var userID;
-
-            // Thanks to Mike Heavers (@mheavers) for his Medium post:
-            // https://medium.com/@mheavers/setting-up-a-basic-file-upload-feature-for-your-static-website-with-just-javascript-using-firebase-32464580d8bb
-            const storageService = firebase.storage();
-            const storageRef = storageService.ref();
-
-            //Login (on page)
-            $(document).on("click", "#logIn", function() {
-                event.preventDefault();
-                var email = $("#emailInput").val();
-                var pass = $("#passInput").val();
-                var auth = firebase.auth();
-                var promise = auth.signInWithEmailAndPassword(email, pass);
-                promise.catch(e => console.log(e.message));
-            });
-
-            //Signup (on page)
-            $(document).on("click", "#signUp", function() {
-                event.preventDefault();
-                var email = $("#emailInput").val();
-                var pass = $("#passInput").val();
-                var auth = firebase.auth();
-                var promise = auth.createUserWithEmailAndPassword(email, pass);
-                promise.catch(e => console.log(e.message));
-            });
-
-            //Logout(on page)
-            $(document).on("click", "#logOut", function(event) {
-                event.preventDefault();
-                firebase.auth().signOut();
-            });
-
-            //Detects whether or not user has logged in
-            auth.onAuthStateChanged(firebaseUser => {
-              if (firebaseUser) {
-                userID = firebaseUser.uid
-
-                $(document).on("click", "#kavivanar", function() {
-                    console.log("I work");
-                    fontPref = '"Kavivanar", cursive';
-                    database.ref().child("user/" + userID + "/Font").set({
-                        font: fontPref,
-                    });
-                });
-              };
-            });
-                    
-            // The handleFileUploadChange function gets triggered any time someone selects a new file via the upload via the Choose File upload button.
-            $('.file-select').on('change', handleFileUploadChange);
-            let selectedFile;
-            function handleFileUploadChange(e) {
-                    selectedFile = e.target.files[0];
-                };
-            
-            // submit handling
-            $(".entry-area").submit(function(event) {
-                // prevent refresh
-                event.preventDefault();
-                
-                // =============== IMAGE Handling =============
-                function handleFileUploadSubmit(e) {
-                    // .child creates a child directory (called images), and .put places the file inside this directory
-                    const uploadTask = storageRef.child(`images/${selectedFile.name}`).put(selectedFile);
-                    console.log("Image submitted to Firebase storage");
-
-                    uploadTask.on('state_changed', (snapshot) => {
-                    // Observe state change events such as progress, pause, and resume
-                    }, (error) => {
-                        // Handle unsuccessful uploads
-                        console.log(error);
-                    }, () => {
-                        console.log('Image uploaded successfully');
-                        // once upload is complete, pull the image URL
-                        uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
-                            console.log(downloadURL);
-                            // Prep for Imgur
-                            var form = new FormData();
-                            form.append("image", downloadURL);
-                            var settings = {
-                                "async": true,
-                                "crossDomain": true,
-                                "url": "https://api.imgur.com/3/image",
-                                "method": "POST",
-                                "headers": {
-                                    "Authorization": "Client-ID 93af746163a6448"
-                                },
-                                "processData": false,
-                                "contentType": false,
-                                "mimeType": "multipart/form-data",
-                                "data": form
-                            }
-
-                            // AJAX call to Imgur (get a useable image link)
-                            $.ajax(settings).then(function (response) {
-                                console.log(response);
-                                var imgurImageLink = JSON.parse(response).data.link;
-                                console.log(imgurImageLink);
-                                var queryURL = "https://api-us.faceplusplus.com/facepp/v3/detect?api_key=PYtXrUAv_8smka-0NHt41JdBmZ1jdL01&api_secret=OBmaSYKR7URc3NiFQgkjWNpIYafOU_35&return_attributes=emotion&image_url=" + imgurImageLink;
-
-                                // AJAX call to Face++ (image)
-                                $.ajax({
-                                    url: queryURL,
-                                    method: "POST"
-                                }).then(function(response) {
-                                    // log emotions from response
-                                    console.log("Image results: ", response.faces[0].attributes.emotion);
-                                    // Set variables from response
-                                    var res = response.faces[0].attributes.emotion;
-                                    var imageAnger = Number((res.anger).toFixed(2));
-                                    var imageFear = Number((res.fear).toFixed(2));
-                                    var imageJoy = Number((res.happiness).toFixed(2));
-                                    var imageSadness = Number((res.sadness).toFixed(2));
-                                    var imageSurprise = Number((res.surprise).toFixed(2));
-                                    var imageDisgust = Number((res.disgust).toFixed(2));
-                                    var imageNeutral = Number((res.neutral).toFixed(2));
-                                    // Update DOM
-                                    $("#image-anger").text(imageAnger + "%");
-                                    $("#image-fear").text(imageFear + "%");
-                                    $("#image-joy").text(imageJoy + "%");
-                                    $("#image-sadness").text(imageSadness + "%");
-                                    $("#image-surprise").text(imageSurprise + "%");
-                                    $("#image-disgust").text(imageDisgust + "%");
-                                    $("#image-neutral").text(imageNeutral + "%");
-                                    
-                                    var base = 10;
-                                    // create data for the image series
-                                    var data_2 = [
-                                        {x: "Anger", value: imageAnger + base},
-                                        {x: "Fear", value: imageFear + base},
-                                        {x: "Joy", value: imageJoy + base},
-                                        {x: "Sadness", value: imageSadness + base},
-                                        {x: "Surprise", value: imageSurprise + base},
-                                    ];
-                                    chart = anychart.radar()
-                                    var series1 = chart.area(data_2);
-                                    chart.container("imgChart");
-                                    chart.draw();
-                                });
-                            });
-                        });
-                    });
-                };
-                // Handling both link submission & local image select (link submission takes precedence)
-                if ($("#image-submit").val()) {
-                    var submittedLink = $("#image-submit").val();
-                    console.log(submittedLink);
-                    var queryURL = "https://api-us.faceplusplus.com/facepp/v3/detect?api_key=PYtXrUAv_8smka-0NHt41JdBmZ1jdL01&api_secret=OBmaSYKR7URc3NiFQgkjWNpIYafOU_35&return_attributes=emotion&image_url=" + submittedLink;
-
-                    // AJAX call to Face++ (image)
-                    $.ajax({
-                        url: queryURL,
-                        method: "POST"
-                    }).then(function(response) {
-                        // log emotions from response
-                        console.log("Image results: ", response.faces[0].attributes.emotion);
-                        // Set variables from response
-                        var res = response.faces[0].attributes.emotion;
-                        var imageAnger = Number((res.anger).toFixed(2));
-                        var imageFear = Number((res.fear).toFixed(2));
-                        var imageJoy = Number((res.happiness).toFixed(2));
-                        var imageSadness = Number((res.sadness).toFixed(2));
-                        var imageSurprise = Number((res.surprise).toFixed(2));
-                        var imageDisgust = Number((res.disgust).toFixed(2));
-                        var imageNeutral = Number((res.neutral).toFixed(2));
-                        // Update DOM
-                        $("#image-anger").text(imageAnger + "%");
-                        $("#image-fear").text(imageFear + "%");
-                        $("#image-joy").text(imageJoy + "%");
-                        $("#image-sadness").text(imageSadness + "%");
-                        $("#image-surprise").text(imageSurprise + "%");
-                        $("#image-disgust").text(imageDisgust + "%");
-                        $("#image-neutral").text(imageNeutral + "%");
-
-                        // create data for the image series
-                        var data_2 = [
-                            {x: "Anger", value: imageAnger + base},
-                            {x: "Fear", value: imageFear + base},
-                            {x: "Joy", value: imageJoy + base},
-                            {x: "Sadness", value: imageSadness + base},
-                            {x: "Surprise", value: imageSurprise + base},
-                        ];
-                        chart = anychart.radar()
-                        var series1 = chart.area(data_2);
-                        chart.container("imgChart");
-                        chart.draw();
-                    });
-                } else {
-                    handleFileUploadSubmit(event);
-                }
-                
-                // ================ TEXT HANDLING ==========================
-
-                // grab submitted text and image
-                var journalPost = $("#text-submit").val();
-                console.log("journalPost:   " + journalPost);
-                // create query URLs
-                var textQueryURL = "https://apiv2.indico.io/emotion/?api_key=d292aaf451b50aad46bd779bb711df7d&data=" + journalPost;
-                
-                // AJAX call to Indico (text)
-                $.ajax({
-                    url: textQueryURL,
-                    method: "GET"
-                }).then(function(response) {
-                    // log emotions from response
-                    console.log("Text results: ", response.results);
-                    // Set variables from response
-                    var textAnger = Number((response.results.anger * 100).toFixed(2));
-                    var textFear = Number((response.results.fear * 100).toFixed(2))
-                    var textJoy = Number((response.results.joy * 100).toFixed(2))
-                    var textSadness = Number((response.results.sadness * 100).toFixed(2))
-                    var textSurprise = Number((response.results.surprise * 100).toFixed(2))
-                    // Update DOM
-                    $("#text-anger").text(textAnger + "%");
-                    $("#text-fear").text(textFear + "%");
-                    $("#text-joy").text(textJoy + "%");
-                    $("#text-sadness").text(textSadness + "%");
-                    $("#text-surprise").text(textSurprise + "%");
-                    var base = 10;
-                    // create data for the text series
-                    var data_1 = [
-                            {x: "Anger", value: textAnger + base},
-                            {x: "Fear", value: textFear + base},
-                            {x: "Joy", value: textJoy + base},
-                            {x: "Sadness", value: textSadness + base},
-                            {x: "Surprise", value: textSurprise + base},
-                    ];
-                    chart = anychart.radar()
-                    var series1 = chart.area(data_1);
-                    chart.container("textChart");
-                    chart.draw();
-                });
-            });
-            
-        });
-    </script>
+    <script src="js/main.js"></script>
+    
   </body>
 
 </html>

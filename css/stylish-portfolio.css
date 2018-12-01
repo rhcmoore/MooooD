@@ -230,11 +230,39 @@ h6 {
 }
 
 .callout {
-  padding: 15rem 0;
+  padding: 55px;
   background:url("../img/pos3.0.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+ 
+}
+.form-control {
+  opacity: .5;
+ }
+
+.file-select {
+  color: grey;
+  font-family: 'Autour One', cursive;
+  margin-top: 20px;
+  background-color: darkgrey;
+
+}
+
+
+
+#journalSubmit {
+  color: orange;
+  font-family: 'Autour One', cursive;
+  font-weight: 200;
+  font-size: 45pt;
+  text-shadow:1px 1px black;
+}
+
+#journalSubmit1 {
+  color: orange;
+  font-family: 'Autour One', cursive;
+  text-shadow:1px 1px black;
 }
 
 #submit {
