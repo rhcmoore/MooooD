@@ -264,16 +264,16 @@ h6 {
   font-family: 'Autour One', cursive;
   text-shadow:1px 1px black;
 }
+#journalSubmit {
+  color: white;
+  font-family: 'Baloo Bhaijaan', cursive;
+  font-weight: 200;
+  font-size: 30pt;
+  text-shadow:2px 2px rgb(240, 24, 24);
+}
 
 #submit {
   align-items: center;
-}
-
-.callout h2 {
-  font-size: 3.5rem;
-  font-weight: 700;
-  display: block;
-  max-width: 30rem;
 }
 
 .portfolio-item {
@@ -359,7 +359,7 @@ h6 {
 
 #bottomLogo {
   height: 300px;
-  width: 1500px;
+  width: 1400px;
   margin-top: -140px;
 }
 
