@@ -2,13 +2,13 @@ $(document).ready(function() {
     $("#results-callout").hide();
     // Initialize Firebase
     var config = {
-        apiKey: "AIzaSyDwy1LRuWQzu_pS-4YIH8eVtBbrWERLy7w",
-        authDomain: "my-project-f92de.firebaseapp.com",
-        databaseURL: "https://my-project-f92de.firebaseio.com",
-        projectId: "my-project-f92de",
-        storageBucket: "my-project-f92de.appspot.com",
-        messagingSenderId: "863552139342"
-    };
+        apiKey: "AIzaSyDoUt2cvuKUgc1xp5nGvCbvP3aVWfrlvNI",
+        authDomain: "mood-2414d.firebaseapp.com",
+        databaseURL: "https://mood-2414d.firebaseio.com",
+        projectId: "mood-2414d",
+        storageBucket: "mood-2414d.appspot.com",
+        messagingSenderId: "674088000857"
+      };
     firebase.initializeApp(config);
     // =========== AUTHENTICATION ==============
 
@@ -287,7 +287,7 @@ $(document).ready(function() {
 
     });
     // When a child is added to the record
-    database.ref(users).on("child_added", function(snapshot) {
+    database.ref("userData").on("child_added", function(snapshot) {
         console.log("Child added");
         // get all user posts
         var userPost = snapshot.val()[userID];
