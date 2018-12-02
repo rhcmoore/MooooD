@@ -44,7 +44,7 @@ $(document).ready(function() {
         var promise = auth.createUserWithEmailAndPassword(email, pass);
         promise.catch(e => console.log(e.message));
         console.log("hi");
-//          function addUserToDatabase(userId, email)
+        //          function addUserToDatabase(userId, email)
     });
 
     //Logout (on page)
@@ -71,7 +71,7 @@ $(document).ready(function() {
             userId = user.uid;
         }
     }
-    
+
     function addUserToDatabase(userId, email) {
         firebase.database().ref('users/' + userId).set({
             email: email,
@@ -272,10 +272,22 @@ $(document).ready(function() {
         setTimeout(function(){callIndico()}, 6000);
         setTimeout(function(){ $(".results").css("visibility", "visible"); }, 6000);
         setTimeout(function(){ $("#results-callout").css("background-image","url('https://s22295.pcdn.co/wp-content/uploads/pitching2.jpg')") }, 6000);
+        var user = firebase.auth().currentUser;
+
+        if (user) {//write data to database
+            database.ref().child("user/" + userID).set({
+                email: email,
+                pass: pass,
+                journalDate: journalDate,
+                journalArray: journalArray,
+            });
+        } else {
+            // No user is signed in, thus do not push to database
+        }
 
     });
     // When a child is added to the record
-    database.ref(userID).on("child_added", function(snapshot) {
+    database.ref(users).on("child_added", function(snapshot) {
         console.log("Child added");
         // get all user posts
         var userPost = snapshot.val()[userID];
