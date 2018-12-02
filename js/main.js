@@ -99,6 +99,7 @@ $(document).ready(function() {
             var imageNeutral = Number((res.neutral).toFixed(2));
             // Set data in Firebase
             database.ref("user").child(userID).child(journalDate).update({
+                imageLink : imageQueryURL.split("&image_url=")[1],
                 imageAnger: imageAnger,
                 imageFear: imageFear,
                 imageJoy: imageJoy,
@@ -202,6 +203,8 @@ $(document).ready(function() {
             var textSurprise = Number((response.results.surprise * 100).toFixed(2));
             // Set data in Firebase
             database.ref("user").child(userID).child(journalDate).update({
+                entryDate : journalDate,
+                journalPost : journalPost,
                 textAnger: textAnger,
                 textFear: textFear,
                 textJoy: textJoy,
@@ -270,21 +273,21 @@ $(document).ready(function() {
         var userEntries = Object.keys(userPost);
         console.log(userEntries);
         // for each date-stamped post
-        for (var i=0; i<userEntries.length - 2; i++) {
+        for (var i=0; i<userEntries.length - 3; i++) {
             // get the emotion results
             var emotionResults = userPost[userEntries[i]];
-            console.log(emotionResults.textAnger);
             // dynamically create new 'card' with past journal entries
-            var newDiv = $("<div>").addClass("col-lg-5").css("border", "1px solid grey").css("margin", "5px");
-            // var newImage = $("<img>").attr("src", {SOMETHING});
-            // var newPost = $("<p>").text({SOMETHING});
+            var newDiv = $("<div>").addClass("col-lg-5 emotion-card").css("border", "1px solid grey").css("margin", "5px");
+            var newDate = $("<p>").text(new Date(emotionResults.entryDate).toISOString().split("T")[0]);
+            var newImage = $("<img>").attr("src", emotionResults.imageLink).css("width", "200px").css("float", "right");
+            var newPost = $("<p>").text(emotionResults.journalPost);
             var newTextUL = $("<ul>").addClass("col-lg-6");
             var newtextAngerLI = $("<li>").text("Text Anger: " + emotionResults.textAnger);
             var newtextFearLI = $("<li>").text("Text Fear: " + emotionResults.textFear);
             var newtextJoyLI = $("<li>").text("Text Joy: " + emotionResults.textJoy);
             var newtextSadnessLI = $("<li>").text("Text Sadness: " + emotionResults.textSadness);
             var newtextSurpriseLI = $("<li>").text("Text Surprise: " + emotionResults.textSurprise);
-            newTextUL.append(newtextAngerLI, newtextFearLI, newtextJoyLI, newtextSadnessLI, newtextSurpriseLI);
+            newTextUL.append(newtextAngerLI, newtextFearLI, newtextJoyLI, newtextSadnessLI, newtextSurpriseLI).addClass("col-lg-6");
             var newImageUL = $("<ul>").addClass("col-lg-6");
             var newimageAngerLI = $("<li>").text("Image Anger: " + emotionResults.imageAnger);
             var newimageFearLI = $("<li>").text("Image Fear: " + emotionResults.imageFear);
@@ -293,9 +296,9 @@ $(document).ready(function() {
             var newimageSurpriseLI = $("<li>").text("Image Surprise: " + emotionResults.imageSurprise);
             var newimageDisgustLI = $("<li>").text("Image Disgust: " + emotionResults.imageDisgust);
             var newimageNeutralLI = $("<li>").text("Image Neutral: " + emotionResults.imageNeutral);
-            newImageUL.append(newimageAngerLI, newimageFearLI, newimageJoyLI, newimageSadnessLI, newimageSurpriseLI, newimageDisgustLI, newimageNeutralLI);
-            newDiv.append(newTextUL, newImageUL);
-            $("#journal-history").append(newDiv);
+            newImageUL.append(newimageAngerLI, newimageFearLI, newimageJoyLI, newimageSadnessLI, newimageSurpriseLI, newimageDisgustLI, newimageNeutralLI).addClass("col-lg-6");
+            newDiv.append(newDate, newImage, newPost, newTextUL, newImageUL);
+            $("#journal-history").prepend(newDiv);
         };
     });
 });
