@@ -19,7 +19,9 @@ $(document).ready(function() {
     var pass;
     var d = new Date();
     var journalDate = d.getTime();
-    console.log(journalDate);
+    var journalArray = [];
+    var journalStr = "string";
+
 
     // Thanks to Mike Heavers (@mheavers) for his Medium post on Firebase storage:
     // https://medium.com/@mheavers/setting-up-a-basic-file-upload-feature-for-your-static-website-with-just-javascript-using-firebase-32464580d8bb
@@ -60,10 +62,14 @@ $(document).ready(function() {
             database.ref().child("user/" + userID).set({
                 email: email,
                 pass: pass,
-                journalDate: journalDate
+                journalDate: journalDate,
+                journalArray:journalArray,
             });
+        } else {
+            
         };
     });
+
     // global variables for call to Face++
     var imageQueryURL;
     // Selecting uploaded file if user chooses to upload their own
@@ -255,6 +261,42 @@ $(document).ready(function() {
         setTimeout(function(){ $(".results").css("visibility", "visible"); }, 6000);
         setTimeout(function(){ $("#results-callout").css("background-image","url('https://s22295.pcdn.co/wp-content/uploads/pitching2.jpg')") }, 6000);
 
+    });
+
+    database.ref(userID).on("child_added", function(snapshot) {
+        console.log("Child added");
+        var userPost = snapshot.val()[userID];
+        console.log(userPost);
+        var userEntries = Object.keys(userPost);
+        var userEntryData = Object.values(userPost);
+        console.log(userEntries);
+        console.log(userEntryData);
+        userEntries.forEach(function(entry) {
+            var emotionResults = userPost[entry];
+            console.log(emotionResults.textAnger);
+            // dynamically create new 'card' with past journal entries
+            var newDiv = $("<div>").addClass("col-lg-4").css("border", "1px solid grey").css("margin", "10px");
+            // var newImage = $("<img>").attr("src", {SOMETHING});
+            // var newPost = $("<p>").text({SOMETHING});
+            var newTextUL = $("<ul>");
+            var newtextAngerLI = $("<li>").text("Text Anger: " + emotionResults.textAnger);
+            var newtextFearLI = $("<li>").text("Text Fear: " + emotionResults.textFear);
+            var newtextJoyLI = $("<li>").text("Text Joy: " + emotionResults.textJoy);
+            var newtextSadnessLI = $("<li>").text("Text Sadness: " + emotionResults.textSadness);
+            var newtextSurpriseLI = $("<li>").text("Text Surprise: " + emotionResults.textSurprise);
+            newTextUL.append(newtextAngerLI, newtextFearLI, newtextJoyLI, newtextSadnessLI, newtextSurpriseLI);
+            var newImageUL = $("<ul>");
+            var newimageAngerLI = $("<li>").text("Image Anger: " + emotionResults.imageAnger);
+            var newimageFearLI = $("<li>").text("Image Fear: " + emotionResults.imageFear);
+            var newimageJoyLI = $("<li>").text("Image Joy: " + emotionResults.imageJoy);
+            var newimageSadnessLI = $("<li>").text("Image Sadness: " + emotionResults.imageSadness);
+            var newimageSurpriseLI = $("<li>").text("Image Surprise: " + emotionResults.imageSurprise);
+            var newimageDisgustLI = $("<li>").text("Image Disgust: " + emotionResults.imageDisgust);
+            var newimageNeutralLI = $("<li>").text("Image Neutral: " + emotionResults.imageNeutral);
+            newImageUL.append(newimageAngerLI, newimageFearLI, newimageJoyLI, newimageSadnessLI, newimageSurpriseLI, newimageDisgustLI, newimageNeutralLI);
+            newDiv.append(newTextUL, newImageUL);
+            $("#journal-history").append(newDiv);
+        });
     });
 
     // function appendNewDiv() {
