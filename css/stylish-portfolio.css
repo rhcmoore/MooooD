@@ -100,7 +100,7 @@ h6 {
   width: 700px;
   margin-right: 280px;
   margin-top: -600px;
-  position: absolute;
+  position: relative;
 }
 
 #bgLogo {
@@ -126,6 +126,11 @@ h6 {
   .masthead h1 {
     font-size: 5.5rem;
   }
+  
+    #logo {
+height: auto;
+    }
+  
 }
 
 /* Side Menu */
@@ -264,20 +269,14 @@ h6 {
   font-size: 45pt;
   text-shadow:1px 1px black;
 }
-
 #journalSubmit1 {
   color: orange;
   font-family: 'Autour One', cursive;
   text-shadow:1px 1px black;
 }
-#journalSubmit {
-  color: white;
-  font-family: 'Baloo Bhaijaan', cursive;
-  font-weight: 200;
-  font-size: 30pt;
-  text-shadow:2px 2px rgb(240, 24, 24);
+#text-submit {
+  font-family: 'Indie Flower';
 }
-
 #submit {
   align-items: center;
 }
@@ -349,6 +348,16 @@ h6 {
     -webkit-clip-path: inset(2rem);
     clip-path: inset(2rem);
   }
+}
+
+
+#feedBack {
+  color: orange;
+  font-family: 'Autour One', cursive;
+  font-weight: 200;
+  font-size: 20pt;
+  text-shadow:1px 1px black;
+  background-image: url(https://s22295.pcdn.co/wp-content/uploads/pitching2.jpg);
 }
 
 
