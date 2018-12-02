@@ -46,23 +46,33 @@
                     <input type="text" placeholder="Enter Username" name="uname">
                     <input type="password" placeholder="Enter Password" name="psw">        
                     <button type="submit">Login</button>
-                    <input type="checkbox" style="margin:26px 30px;"> Remember me      
+                    <input type="checkbox" style="margin:26px 20px;"> Remember me    
+                    <a href="#sign-in" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">New User?</a>
                     <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
                 </div>
 
             </form>
 
         </div>
-        <script>
-            // If user clicks anywhere outside of the modal, Modal will close
+        <div id="sign-in" class="modal">
 
-            var modal = document.getElementById('modal-wrapper');
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-        </script>
+            <form class="modal-content animate" action="/action_page.php">
+
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+                    <img src="1.png" alt="Avatar" class="avatar">
+                    <h1 style="text-align:center">New User?</h1>
+                </div>
+
+                <div class="container">
+                    <input type="text" placeholder="Enter Username" name="uname">
+                    <input type="password" placeholder="Enter Password" name="psw">        
+                    <button type="submit">SignUp</button>
+                </div>
+
+            </form>
+
+        </div>
         <!-- Navigation -->
         <a class="menu-toggle rounded" href="#">
             <i class="fas fa-bars"></i>
@@ -198,7 +208,7 @@
             <div class="container text-center">
                 <div class="row" >
                     <div class="col-lg-4">
-                        <div id="textChart" style="width: 400px; height: 500px; opacity: 0.5">
+                        <div id="textChart" style="width: 400px; height: 500px; opacity: 0.9">
                         </div>
                     </div>
                     <div class="col-lg-2">

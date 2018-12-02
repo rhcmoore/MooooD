@@ -309,7 +309,7 @@ $(document).ready(function() {
 
     });
     // When a child is added to the record
-    database.ref(users).on("child_added", function(snapshot) {
+    database.ref(userData).on("child_added", function(snapshot) {
         console.log("Child added");
         // get all user posts
         var userPost = snapshot.val()[userID];
@@ -345,4 +345,12 @@ $(document).ready(function() {
             $("#journal-history").prepend(newDiv);
         };
     });
+    // If user clicks anywhere outside of the modal, Modal will close
+
+    var modal = document.getElementById('modal-wrapper');
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 });
