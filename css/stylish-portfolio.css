@@ -95,7 +95,7 @@ h6 {
 }
 
 #logo {
-  margin-left: 340px;
+  margin-left: 368px;
   height: 400px;
   width: 700px;
   margin-right: 280px;
@@ -230,22 +230,56 @@ h6 {
 }
 
 .callout {
-  padding: 15rem 0;
+  padding: 55px;
   background:url("../img/pos3.0.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+ 
+}
+
+#results-callout {
+  background-image: url('https://s22295.pcdn.co/wp-content/uploads/pitching2.jpg');
+  color: white;
+}
+
+.form-control {
+  opacity: .5;
+ }
+
+.file-select {
+  color: grey;
+  font-family: 'Autour One', cursive;
+  margin-top: 20px;
+  background-color: darkgrey;
+
+}
+
+
+
+#journalSubmit {
+  color: orange;
+  font-family: 'Autour One', cursive;
+  font-weight: 200;
+  font-size: 45pt;
+  text-shadow:1px 1px black;
+}
+
+#journalSubmit1 {
+  color: orange;
+  font-family: 'Autour One', cursive;
+  text-shadow:1px 1px black;
+}
+#journalSubmit {
+  color: white;
+  font-family: 'Baloo Bhaijaan', cursive;
+  font-weight: 200;
+  font-size: 30pt;
+  text-shadow:2px 2px rgb(240, 24, 24);
 }
 
 #submit {
   align-items: center;
-}
-
-.callout h2 {
-  font-size: 3.5rem;
-  font-weight: 700;
-  display: block;
-  max-width: 30rem;
 }
 
 .portfolio-item {
@@ -331,7 +365,7 @@ h6 {
 
 #bottomLogo {
   height: 300px;
-  width: 1500px;
+  width: 1400px;
   margin-top: -140px;
 }
 

@@ -25,7 +25,7 @@
         <script src="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.js"></script>
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.css" />
         <script type="text/javascript">
-            // FirebaseUI config.
+            /   / FirebaseUI config.
             var database = firebase.database();
             var auth = firebase.auth();
             var userID;
@@ -83,14 +83,34 @@
                     // save the user's profile into Firebase so we can list users,
                     // use them in Security and Firebase Rules, and show profiles
 
-                    var anonymousUser = firebase.auth().currentUser;
-                    //Get the current userID
-                    //            Get the user data
-                    console.log(anonymousUser);
-                    //            return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-                    //            console.log(snapshot);
-                    //            }); 
+            var ui = new firebaseui.auth.AuthUI(firebase.auth());
+            console.log(ui);
+            // The start method will wait until the DOM is loaded.
+            ui.start('#firebaseui-auth-container', uiConfig);
+            
+            
 
+            // Get a reference to the database service
+            var database = firebase.database();
+            // save the user's profile into Firebase so we can list users,
+            // use them in Security and Firebase Rules, and show profiles
+            function writeUserData(userId, name, email, imageUrl) {
+                firebase.database().ref('users/' + userId).set({
+                    username: name,
+                    email: email
+                    //some more user data
+                });
+            }
+            var anonymousUser = firebase.auth().currentUser;
+            console.log(anonymousUser);
+            //Get the current userID
+            var userId = firebase.auth().currentUser.uid;
+//            Get the user data
+            console.log(userId);
+//            return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+//            console.log(snapshot);
+//            }); 
+            
         </script>
     </head>
     <body>
