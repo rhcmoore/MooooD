@@ -137,6 +137,7 @@ $(document).ready(function() {
                 {x: "Sadness", value: imageSadness + base},
                 {x: "Surprise", value: imageSurprise + base},
             ];
+            $("#imgChart").empty();
             chart = anychart.radar()
             var series1 = chart.area(data_2);
             chart.container("imgChart");
@@ -238,6 +239,7 @@ $(document).ready(function() {
                 {x: "Sadness", value: textSadness + base},
                 {x: "Surprise", value: textSurprise + base},
             ];
+            $("#textChart").empty();
             chart = anychart.radar()
             var series1 = chart.area(data_1);
             chart.container("textChart");
