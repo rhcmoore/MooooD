@@ -262,30 +262,31 @@ $(document).ready(function() {
         setTimeout(function(){ $("#results-callout").css("background-image","url('https://s22295.pcdn.co/wp-content/uploads/pitching2.jpg')") }, 6000);
 
     });
-
+    // When a child is added to the record
     database.ref(userID).on("child_added", function(snapshot) {
         console.log("Child added");
+        // get all user posts
         var userPost = snapshot.val()[userID];
         console.log(userPost);
         var userEntries = Object.keys(userPost);
-        var userEntryData = Object.values(userPost);
         console.log(userEntries);
-        console.log(userEntryData);
-        userEntries.forEach(function(entry) {
-            var emotionResults = userPost[entry];
+        // for each date-stamped post
+        for (var i=0; i<userEntries.length - 2; i++) {
+            // get the emotion results
+            var emotionResults = userPost[userEntries[i]];
             console.log(emotionResults.textAnger);
             // dynamically create new 'card' with past journal entries
-            var newDiv = $("<div>").addClass("col-lg-4").css("border", "1px solid grey").css("margin", "10px");
+            var newDiv = $("<div>").addClass("col-lg-5").css("border", "1px solid grey").css("margin", "5px");
             // var newImage = $("<img>").attr("src", {SOMETHING});
             // var newPost = $("<p>").text({SOMETHING});
-            var newTextUL = $("<ul>");
+            var newTextUL = $("<ul>").addClass("col-lg-6");
             var newtextAngerLI = $("<li>").text("Text Anger: " + emotionResults.textAnger);
             var newtextFearLI = $("<li>").text("Text Fear: " + emotionResults.textFear);
             var newtextJoyLI = $("<li>").text("Text Joy: " + emotionResults.textJoy);
             var newtextSadnessLI = $("<li>").text("Text Sadness: " + emotionResults.textSadness);
             var newtextSurpriseLI = $("<li>").text("Text Surprise: " + emotionResults.textSurprise);
             newTextUL.append(newtextAngerLI, newtextFearLI, newtextJoyLI, newtextSadnessLI, newtextSurpriseLI);
-            var newImageUL = $("<ul>");
+            var newImageUL = $("<ul>").addClass("col-lg-6");
             var newimageAngerLI = $("<li>").text("Image Anger: " + emotionResults.imageAnger);
             var newimageFearLI = $("<li>").text("Image Fear: " + emotionResults.imageFear);
             var newimageJoyLI = $("<li>").text("Image Joy: " + emotionResults.imageJoy);
@@ -296,33 +297,8 @@ $(document).ready(function() {
             newImageUL.append(newimageAngerLI, newimageFearLI, newimageJoyLI, newimageSadnessLI, newimageSurpriseLI, newimageDisgustLI, newimageNeutralLI);
             newDiv.append(newTextUL, newImageUL);
             $("#journal-history").append(newDiv);
-        });
+        };
     });
-
-    // function appendNewDiv() {
-    //     // dynamically create new 'card' with past journal entries
-    //     var newDiv = $("<div>").addClass("col-lg-4");
-    //     var newImage = $("<img>").attr("src", {SOMETHING});
-    //     var newPost = $("<p>").text({SOMETHING});
-    //     var newTextUL = $("<ul>");
-    //     var newtextAngerLI = $("<li>").text({textANGERvar})
-    //     var newtextFearLI = $("<li>").text({textFEARvar})
-    //     var newtextJoyLI = $("<li>").text({textJOYvar})
-    //     var newtextSadnessLI = $("<li>").text({textSADNESSvar})
-    //     var newtextSurpriseLI = $("<li>").text({textSURPRISEvar})
-    //     newTextUL.append(newtextAngerLI, newtextFearLI, newtextJoyLI, newtextSadnessLI, newtextSurpriseLI);
-    //     var newImageUL = $("<ul>");
-    //     var newimageAngerLI = $("<li>").text({imageANGERvar})
-    //     var newimageFearLI = $("<li>").text({imageFEARvar})
-    //     var newimageJoyLI = $("<li>").text({imageJOYvar})
-    //     var newimageSadnessLI = $("<li>").text({imageSADNESSvar})
-    //     var newimageSurpriseLI = $("<li>").text({imageSURPRISEvar})
-    //     var newimageDisgustLI = $("<li>").text({imageDISGUSTvar})
-    //     var newimageNeutralLI = $("<li>").text({imageNEUTRALvar})
-    //     newImageUL.append(newimageAngerLI, newimageFearLI, newimageJoyLI, newimageSadnessLI, newimageSurpriseLI, newimageDisgustLI, newimageNeutralLI);
-    //     newDiv.append(TIMESTAMPvar, newImage, newPost, newTextUL, newImageUL);
-    //     $("#journal-history").append(newDiv);
-    // }
     
 });
 
