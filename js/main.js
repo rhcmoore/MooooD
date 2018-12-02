@@ -2,12 +2,12 @@ $(document).ready(function() {
     $("#results-callout").hide();
     // Initialize Firebase
     var config = {
-        apiKey: "AIzaSyDoUt2cvuKUgc1xp5nGvCbvP3aVWfrlvNI",
-        authDomain: "mood-2414d.firebaseapp.com",
-        databaseURL: "https://mood-2414d.firebaseio.com",
-        projectId: "mood-2414d",
-        storageBucket: "mood-2414d.appspot.com",
-        messagingSenderId: "674088000857"
+        apiKey: "AIzaSyDwy1LRuWQzu_pS-4YIH8eVtBbrWERLy7w",
+        authDomain: "my-project-f92de.firebaseapp.com",
+        databaseURL: "https://my-project-f92de.firebaseio.com",
+        projectId: "my-project-f92de",
+        storageBucket: "my-project-f92de.appspot.com",
+        messagingSenderId: "863552139342"
     };
     firebase.initializeApp(config);
     // =========== AUTHENTICATION ==============
@@ -32,19 +32,19 @@ $(document).ready(function() {
         event.preventDefault();
         email = $("#emailInput").val();
         pass = $("#passInput").val();
-        var auth = firebase.auth();
         var promise = auth.signInWithEmailAndPassword(email, pass);
         promise.catch(e => console.log(e.message));
     });
 
     //Signup (on page)
-    $(document).on("click", "#signUp", function() {
+    $(document).on("click", "#signUp", function(){
         event.preventDefault();
         email = $("#emailInput").val();
         pass = $("#passInput").val();
-        var auth = firebase.auth();
         var promise = auth.createUserWithEmailAndPassword(email, pass);
         promise.catch(e => console.log(e.message));
+        console.log("hi");
+        //          function addUserToDatabase(userId, email)
     });
 
     //Logout (on page)
@@ -56,26 +56,36 @@ $(document).ready(function() {
     //Detects whether or not user has logged in
     auth.onAuthStateChanged(firebaseUser => {
         if (firebaseUser) {
-            userID = firebaseUser.uid
+            userID = firebaseUser.uid;
+            email = firebaseUser.email;
             console.log("userID: " + userID);
-            database.ref().child("user/" + userID).set({
-                email: email,
-                pass: pass,
-                journalDate: journalDate,
-                journalArray:journalArray,
-            });
         } else {
-            
+            //user signs out
         };
     });
+
+    function getCurrentUserData(){
+        var user = auth.currentUser;
+        if (user != null) {
+            email = user.email;
+            userId = user.uid;
+        }
+    }
+
+    function addUserToDatabase(userId, email) {
+        firebase.database().ref('users/' + userId).set({
+            email: email,
+        });
+    }
+
 
     // global variables for call to Face++
     var imageQueryURL;
     // Selecting uploaded file if user chooses to upload their own
     let selectedFile;
     function handleFileUploadChange(e) {
-            selectedFile = e.target.files[0];
-        };
+        selectedFile = e.target.files[0];
+    };
 
     // function for Face++ call and DOM update
     function callFacePlusPlus() {
@@ -98,7 +108,7 @@ $(document).ready(function() {
             var imageDisgust = Number((res.disgust).toFixed(2));
             var imageNeutral = Number((res.neutral).toFixed(2));
             // Set data in Firebase
-            database.ref("user").child(userID).child(journalDate).update({
+            database.ref("userData").child(userID).child(journalDate).update({
                 imageLink : imageQueryURL.split("&image_url=")[1],
                 imageAnger: imageAnger,
                 imageFear: imageFear,
@@ -116,7 +126,7 @@ $(document).ready(function() {
             $("#image-surprise").text(imageSurprise + "%");
             $("#image-disgust").text(imageDisgust + "%");
             $("#image-neutral").text(imageNeutral + "%");
-            
+
             // Display chart section
             var base = 10;
             // create data for the image series
@@ -141,7 +151,7 @@ $(document).ready(function() {
         console.log("Image submitted to Firebase storage");
 
         uploadTask.on('state_changed', (snapshot) => {
-        // Observe state change events such as progress, pause, and resume
+            // Observe state change events such as progress, pause, and resume
         }, (error) => {
             // Handle unsuccessful uploads
             console.log(error);
@@ -187,7 +197,7 @@ $(document).ready(function() {
         console.log("journalPost:   " + journalPost);
         // create query URLs
         var textQueryURL = "https://apiv2.indico.io/emotion/?api_key=d292aaf451b50aad46bd779bb711df7d&data=" + journalPost;
-        
+
         // AJAX call to Indico (text)
         $.ajax({
             url: textQueryURL,
@@ -202,7 +212,7 @@ $(document).ready(function() {
             var textSadness = Number((response.results.sadness * 100).toFixed(2));
             var textSurprise = Number((response.results.surprise * 100).toFixed(2));
             // Set data in Firebase
-            database.ref("user").child(userID).child(journalDate).update({
+            database.ref("userData").child(userID).child(journalDate).update({
                 entryDate : journalDate,
                 journalPost : journalPost,
                 textAnger: textAnger,
@@ -217,16 +227,16 @@ $(document).ready(function() {
             $("#text-joy").text(textJoy + "%");
             $("#text-sadness").text(textSadness + "%");
             $("#text-surprise").text(textSurprise + "%");
-            
+
             // Display chart section
             var base = 10;
             // create data for the text series
             var data_1 = [
-                    {x: "Anger", value: textAnger + base},
-                    {x: "Fear", value: textFear + base},
-                    {x: "Joy", value: textJoy + base},
-                    {x: "Sadness", value: textSadness + base},
-                    {x: "Surprise", value: textSurprise + base},
+                {x: "Anger", value: textAnger + base},
+                {x: "Fear", value: textFear + base},
+                {x: "Joy", value: textJoy + base},
+                {x: "Sadness", value: textSadness + base},
+                {x: "Surprise", value: textSurprise + base},
             ];
             chart = anychart.radar()
             var series1 = chart.area(data_1);
@@ -241,7 +251,7 @@ $(document).ready(function() {
     $(".entry-area").submit(function(event) {
         // prevent refresh
         event.preventDefault();
-        
+
         // Handling both link submission & local image select (link submission takes precedence for speed)
         if ($("#image-submit").val()) {
             // grab link from submitted link
@@ -262,10 +272,22 @@ $(document).ready(function() {
         setTimeout(function(){callIndico()}, 6000);
         setTimeout(function(){ $(".results").css("visibility", "visible"); }, 6000);
         setTimeout(function(){ $("#results-callout").css("background-image","url('https://s22295.pcdn.co/wp-content/uploads/pitching2.jpg')") }, 6000);
+        var user = firebase.auth().currentUser;
+
+        if (user) {//write data to database
+            database.ref().child("user/" + userID).set({
+                email: email,
+                pass: pass,
+                journalDate: journalDate,
+                journalArray: journalArray,
+            });
+        } else {
+            // No user is signed in, thus do not push to database
+        }
 
     });
     // When a child is added to the record
-    database.ref(userID).on("child_added", function(snapshot) {
+    database.ref(users).on("child_added", function(snapshot) {
         console.log("Child added");
         // get all user posts
         var userPost = snapshot.val()[userID];
