@@ -22,7 +22,6 @@ $(document).ready(function() {
     var journalArray = [];
     var journalStr = "string";
 
-
     // Thanks to Mike Heavers (@mheavers) for his Medium post on Firebase storage:
     // https://medium.com/@mheavers/setting-up-a-basic-file-upload-feature-for-your-static-website-with-just-javascript-using-firebase-32464580d8bb
     const storageService = firebase.storage();
@@ -299,6 +298,4 @@ $(document).ready(function() {
             $("#journal-history").append(newDiv);
         };
     });
-    
 });
-
