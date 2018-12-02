@@ -138,10 +138,21 @@ $(document).ready(function() {
                 {x: "Surprise", value: imageSurprise + base},
             ];
             $("#imgChart").empty();
-            chart = anychart.radar()
-            var series1 = chart.area(data_2);
-            chart.container("imgChart");
-            chart.draw();
+            // create and configure a pie chart
+            var stage = anychart.graphics.create('container');
+            var chart1 = anychart.pie(data_2);
+            chart1.innerRadius("75%");
+
+            // create a bar chart
+            var chart2 = anychart.bar(data_2);
+
+            // set bar chart as the center content of a pie chart
+            chart1.center().content(chart2);
+            // set the container id
+            chart1.container("imgChart");
+
+            // initiate drawing the chart
+            chart1.draw();
         });
     };
 
@@ -240,10 +251,19 @@ $(document).ready(function() {
                 {x: "Surprise", value: textSurprise + base},
             ];
             $("#textChart").empty();
-            chart = anychart.radar()
-            var series1 = chart.area(data_1);
-            chart.container("textChart");
-            chart.draw();
+            var chart1 = anychart.pie(data_1);
+            chart1.innerRadius("75%");
+
+            // create a bar chart
+            var chart2 = anychart.bar(data_1);
+
+            // set bar chart as the center content of a pie chart
+            chart1.center().content(chart2);
+            // set the container id
+            chart1.container("textChart");
+
+            // initiate drawing the chart
+            chart1.draw();
         });
     };
     // Handles file upload via the Choose File upload button.
