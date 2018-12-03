@@ -17,11 +17,13 @@
         <!-- Custom Fonts -->
         <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Baloo+Bhaijaan|Concert+One|Fredoka+One|Orbitron|Rasa" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Autour+One|Fredericka+the+Great|Fugaz+One|Indie+Flower|Oxygen|Short+Stack" rel="stylesheet">
         <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
         <!-- Custom CSS -->
         <link href="css/stylish-portfolio.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Baloo+Bhaijaan|Concert+One|Fredoka+One|Orbitron|Rasa" rel="stylesheet">
         <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js" type="text/javascript"></script>
         <script src="https://cdn.anychart.com/releases/v8/js/anychart-core.min.js"></script>
         <script src="https://cdn.anychart.com/releases/v8/js/anychart-radar.min.js"></script>
@@ -122,6 +124,8 @@
 
         <!-- Header -->
         <header class="masthead d-flex">
+            <div id=“particles-js”></div>
+            <script src=“js/particles.js”></script>
 
             <div class="" id= "looks">
                 <img id=bgLogo src="img/BGtest1.jpg" alt="failLoad"> 
@@ -209,34 +213,36 @@
         <section class="callout" id="results-callout">
             <div class="container text-center">
                 <div class="row" >
-                    <div class="col-lg-4">
-                        <div id="textChart" style="width: 400px; height: 500px; opacity: 0.9">
+                    <div id="result-window">
+                        <div class="col-lg-4">
+                            <div id="textChart" style="width: 400px; height: 500px; opacity: 0.9">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-2">
-                        <div class="results">
-                            <h3>Text feedback</h3>
-                            <p>Anger: <span id="text-anger"></span></p>
-                            <p>Fear: <span id="text-fear"></span></p>
-                            <p>Joy: <span id="text-joy"></span></p>
-                            <p>Sadness: <span id="text-sadness"></span></p>
-                            <p>Surprise: <span id="text-surprise"></span></p>
+                        <div class="col-lg-2">
+                            <div class="results">
+                                <h1>Text feedback</h1>
+                                <p>Anger: <span id="text-anger"></span></p>
+                                <p>Fear: <span id="text-fear"></span></p>
+                                <p>Joy: <span id="text-joy"></span></p>
+                                <p>Sadness: <span id="text-sadness"></span></p>
+                                <p>Surprise: <span id="text-surprise"></span></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-2">
-                        <div class="results">
-                            <h3>Image feedback</h3>
-                            <p>Anger: <span id="image-anger"></span></p>
-                            <p>Fear: <span id="image-fear"></span></p>
-                            <p>Joy: <span id="image-joy"></span></p>
-                            <p>Sadness: <span id="image-sadness"></span></p>
-                            <p>Surprise: <span id="image-surprise"></span></p>
-                            <p>Disgust: <span id="image-disgust"></span></p>
-                            <p>Neutral: <span id="image-neutral"></span></p>
+                        <div class="col-lg-2">
+                            <div class="results">
+                                <h1>Image feedback</h1>
+                                <p>Anger: <span id="image-anger"></span></p>
+                                <p>Fear: <span id="image-fear"></span></p>
+                                <p>Joy: <span id="image-joy"></span></p>
+                                <p>Sadness: <span id="image-sadness"></span></p>
+                                <p>Surprise: <span id="image-surprise"></span></p>
+                                <p>Disgust: <span id="image-disgust"></span></p>
+                                <p>Neutral: <span id="image-neutral"></span></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div id="imgChart" style="width: 400px; height: 500px;">
+                        <div class="col-lg-4">
+                            <div id="imgChart" style="width: 400px; height: 500px;">
+                            </div>
                         </div>
                     </div> 
                 </div>
