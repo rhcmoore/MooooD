@@ -37,36 +37,25 @@
 
 
 <body id="page-top">
-    <div id="modal-wrapper" class="modal">
+    <div id="log-in" class="modal">
 
         <form class="modal-content animate" action="/action_page.php">
 
 
                 <div class="imgcontainer">
-                    <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+                    <span onclick="document.getElementById('log-in').style.display='none'" class="close" title="Close PopUp">&times;</span>
                     <img src="1.png" alt="Avatar" class="avatar">
                     <h1 style="text-align:center">Modal Popup Box</h1>
                 </div>
 
                 <div class="container">
-                    <input type="text" placeholder="Enter Username" name="uname">
-                    <input type="password" placeholder="Enter Password" name="psw">        
-                    <button type="submit">Login</button>
+                    <input type="email" placeholder="Enter E-mail Address" name="uname" id="emailInput">
+                    <input type="password" placeholder="Enter Password" name="psw" id="passInput">        
+                    <button type="submit" id="logIn">Login</button>
                     <input type="checkbox" style="margin:26px 20px;"> Remember me    
-                    <a href="#sign-in" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;" onclick="document.getElementById('sign-in').style.display='block'">New User?</a>
+                    <a href="#sign-in" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;" onclick="document.getElementById('sign-in').style.display='block'; document.getElementById('log-in').style.display='none';">New User?</a>
                     <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
                 </div>
-
-            <div class="container">
-                <input type="text" placeholder="Enter Username" name="uname">
-                <input type="password" placeholder="Enter Password" name="psw">
-                <button type="submit">Login</button>
-                <input type="checkbox" style="margin:26px 20px;"> Remember me
-                <a href="#sign-in" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">New
-                    User?</a>
-                <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot
-                    Password ?</a>
-            </div>
 
         </form>
 
@@ -76,18 +65,19 @@
         <form class="modal-content animate" action="/action_page.php">
 
             <div class="imgcontainer">
-                <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+                <span onclick="document.getElementById('sign-in').style.display='none'" class="close" title="Close PopUp">&times;</span>
                 <img src="1.png" alt="Avatar" class="avatar">
                 <h1 style="text-align:center">New User?</h1>
             </div>
 
             <div class="container">
-                <input type="text" placeholder="Enter Username" name="uname">
-                <input type="password" placeholder="Enter Password" name="psw">
-                <button type="submit">SignUp</button>
+                <input type="email" placeholder="Enter E-mail Address" class="form-control" id="emailSignInInput">
+                <input type="password" placeholder="Enter Password" name="psw" id="passSignInInput">
+                <button type="submit" id="signUp">SignUp</button>
             </div>
 
         </form>
+    </div>
         <!-- Navigation -->
         <a class="menu-toggle rounded" href="#">
             <i class="fas fa-bars"></i>
@@ -126,7 +116,7 @@
 -->
 
                 <li class="sidebar-nav-item">
-                    <a class="js-scroll-trigger" id="logIn" onclick="document.getElementById('modal-wrapper').style.display='block'">Login</a>
+                    <a class="js-scroll-trigger" id="logIn" onclick="document.getElementById('log-in').style.display='block'">Login</a>
                 </li>
                 <li class="sidebar-nav-item">
                     <a class="js-scroll-trigger" id="logOut">Logout</a>
