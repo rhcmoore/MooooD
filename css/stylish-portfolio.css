@@ -425,25 +425,26 @@ height: auto;
 }
 
 #whiteLogo{
-  margin-left: 600px;
-  margin-bottom: 500px;
-  margin-top: -400px;
+  /* margin-left: 600px;
+  margin-top: -400px; */
+  height: 600px;
+  width: 1000px;
+  align: center;
 
 }
 
 #overlay {
   background-color: rgb(28, 27, 27);
-  
+  width: 100%;
+  text-align: center;
 }
 
 #bottomLogo {
-  margin-top: -140px;
+  margin-top: 20px;
   margin-left: 0px;
-  height: 800px;
+  height: 300px;
   width: 100%;
   position: relative;
-  margin-bottom: 300px;
-
 }
 
 .signUpBottomPage {
@@ -458,7 +459,7 @@ height: auto;
   width: 40px;
 }
 
-.memberList {
+#memberList {
   font-family: 'Baloo Bhaijaan', cursive;
   color: aliceblue;
   text-shadow: #ecb807;
