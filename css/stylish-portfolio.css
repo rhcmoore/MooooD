@@ -267,10 +267,6 @@ height: auto;
   float: left;
 }
 
-/* #imageResults {
-  float: right;
-} */
-
 
 .form-control {
   opacity: .5;
@@ -311,7 +307,8 @@ height: auto;
 .content-section {
   background-color: rgb(28, 27, 27);
   color: white;
-  
+  font-family: 'Autour One', cursive;
+
 }
 
 .portfolio-item {
@@ -418,11 +415,23 @@ height: auto;
 
 .loading-gif {
   background-image: url(‘img/proccessGiphy.gif’);
+  height: auto;
+  width: 100%;
 }
 
 
 #results-callout { 
   background-image: url("https://s22295.pcdn.co/wp-content/uploads/pitching2.jpg");
+}
+
+#whiteLogo{
+  margin-left: 500px;
+  margin-bottom: 60px;
+}
+
+#overlay {
+  background-color: rgb(28, 27, 27);
+  
 }
 
 #bottomLogo {
