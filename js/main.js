@@ -286,7 +286,7 @@ $(document).ready(function() {
             handleFileUploadSubmit(event);
         }
         $(".results").css("visibility", "hidden");
-        $("#results-callout").show().css("background-image","url('https://media1.tenor.com/images/918f9c0214da68656905b1be5c052300/tenor.gif')");
+        $("#results-callout").show().css("background-image","url('img/proccessGiphy.gif')");
         // make call to Face++ and update DOM
         // We need to wait for imgur to process & upload the new image, setting the imageQueryURL variable
         setTimeout(function(){callFacePlusPlus()}, 6000);
@@ -309,7 +309,7 @@ $(document).ready(function() {
 
     });
     // When a child is added to the record
-    database.ref(userData).on("child_added", function(snapshot) {
+    database.ref(`userData[${userID}]`).on("child_added", function(snapshot) {
         console.log("Child added");
         // get all user posts
         var userPost = snapshot.val()[userID];
@@ -317,7 +317,7 @@ $(document).ready(function() {
         var userEntries = Object.keys(userPost);
         console.log(userEntries);
         // for each date-stamped post
-        for (var i=0; i<userEntries.length - 3; i++) {
+        for (var i=0; i<userEntries.length; i++) {
             // get the emotion results
             var emotionResults = userPost[userEntries[i]];
             // dynamically create new 'card' with past journal entries
@@ -351,6 +351,11 @@ $(document).ready(function() {
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
-        }
-    }
+        };
+    };
+
+    particlesJS.load(`particles-js`, `particals.json`, function() {
+    console.log(`callback - particles.js config loaded`);
+    }); 
+
 });
