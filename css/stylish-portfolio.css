@@ -309,7 +309,8 @@ height: auto;
 }
 
 .content-section {
-  background-color: whitesmoke;
+  background-color: rgb(28, 27, 27);
+  color: white;
   
 }
 
@@ -335,7 +336,7 @@ height: auto;
 }
 
 .portfolio-item .caption .caption-content {
-  color: #fff;
+  color: black;
   margin: auto 2rem 2rem;
 }
 
@@ -403,7 +404,7 @@ height: auto;
 }
 
 #result-window {
-  background-image: white;
+  background-image: black;
  
 }
 
