@@ -240,7 +240,7 @@ height: auto;
 }
 
 .callout {
-  padding: 55px;
+  padding: 5px;
   background:url("../img/pos3.0.jpg");
   background-position: center center;
   background-repeat: no-repeat;
@@ -256,20 +256,30 @@ height: auto;
 #results-callout {
   background-image: url('https://s22295.pcdn.co/wp-content/uploads/pitching2.jpg');
   color: white;
-  height: 100%;
-  width: auto;
+  height: 75%;
+  width: 100%;
 }
 
 .results {
   color: orange;
   font-family: 'Autour One', cursive;
   font-weight: 200;
-  font-size: 12pt;
+  font-size: 16pt;
   text-shadow:1px 1px black;  
 }
 
-#textResults {
-  float: left;
+.results p {
+  font-weight: 300;
+  color: black;
+  text-shadow:2px 2px white;  
+ }
+
+#testResults {
+  float: right;
+}
+
+.container-fluid {
+  margin-top: 200px;
 }
 
 
@@ -407,7 +417,7 @@ height: auto;
 
 #result-window {
   background-image: black;
- 
+  width: 100%; 
 }
 
 .Member {
@@ -424,10 +434,6 @@ height: auto;
   width: 100%;
 }
 
-
-#results-callout { 
-  background-image: url("https://s22295.pcdn.co/wp-content/uploads/pitching2.jpg");
-}
 
 #whiteLogo{
   height: 400px;
