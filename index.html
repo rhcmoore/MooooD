@@ -45,21 +45,24 @@
         <form class="modal-content animate">
 
 
-                <div class="imgcontainer">
-                    <span onclick="document.getElementById('log-in').style.display='none'" class="close" title="Close PopUp">&times;</span>
-                    <img src="img/dark_logo_transparent_background.png" alt="Avatar" class="avatar">
-                    <h1 style="text-align:center">Log In!</h1>
-                </div>
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('log-in').style.display='none'" class="close" title="Close PopUp">&times;</span>
+                <img src="img/dark_logo_transparent_background.png" alt="Avatar" class="avatar">
+                <h1 style="text-align:center">Log In!</h1>
+            </div>
 
-                <div class="container">
-                    <input type="email" placeholder="Enter E-mail Address" name="uname" id="emailInput">
-                    <input type="password" placeholder="Enter Password" name="psw" id="passInput">
-                    <div class="errorMsg"></div>
-                    <button type="submit" id="logInBtn">Login</button>
-                    <input type="checkbox" style="margin:26px 20px;"> Remember me    
-                    <a href="#sign-in" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;" onclick="document.getElementById('sign-in').style.display='block'; document.getElementById('log-in').style.display='none';">New User?</a>
-                    <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
-                </div>
+            <div class="container">
+                <input type="email" placeholder="Enter E-mail Address" name="uname" id="emailInput">
+                <input type="password" placeholder="Enter Password" name="psw" id="passInput">
+                <div class="errorMsg"></div>
+                <button type="submit" id="logInBtn">Login</button>
+                <input type="checkbox" style="margin:26px 20px;"> Remember me
+                <a href="#sign-in" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;"
+                    onclick="document.getElementById('sign-in').style.display='block'; document.getElementById('log-in').style.display='none';">New
+                    User?</a>
+                <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot
+                    Password ?</a>
+            </div>
 
         </form>
 
@@ -83,32 +86,32 @@
 
         </form>
     </div>
-        <!-- Navigation -->
-        <a class="menu-toggle rounded" href="#">
-            <i class="fas fa-bars"></i>
-        </a>
-        <nav id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a class="js-scroll-trigger" href="#page-top">MooooD</a>
-                </li>
-                <li class="sidebar-nav-item">
-                    <a class="js-scroll-trigger" href="#page-top">Home</a>
-                </li>
-                <li class="sidebar-nav-item">
-                    <a class="js-scroll-trigger" href="#about">About Us</a>
-                </li>
-                <li class="sidebar-nav-item">
-                    <a class="js-scroll-trigger" href="#services">Submit analysis</a>
-                </li>
-                <li class="sidebar-nav-item">
-                    <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
-                </li>
-                <li class="sidebar-nav-item">
-                    <a class="js-scroll-trigger" href="#contact">Contact Us</a>
-                </li>
+    <!-- Navigation -->
+    <a class="menu-toggle rounded" href="#">
+        <i class="fas fa-bars"></i>
+    </a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a class="js-scroll-trigger" href="#page-top">MooooD</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#page-top">Home</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#about">About Us</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#services">Submit analysis</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#contact">Contact Us</a>
+            </li>
 
-<!--
+            <!--
                     <li class="sidebar-nav-item">
                         <a class="js-scroll-trigger" href="#signup" id="signUp">Sign Up</a>
                     </li>
@@ -120,22 +123,20 @@
                     </li>
 -->
 
-                <li class="sidebar-nav-item">
-                    <a class="js-scroll-trigger" id="logIn" onclick="document.getElementById('log-in').style.display='block'">Login</a>
-                </li>
-                <li class="sidebar-nav-item">
-                    <a class="js-scroll-trigger" id="logOut">Logout</a>
-                </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" id="logIn" onclick="document.getElementById('log-in').style.display='block'">Login</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" id="logOut">Logout</a>
+            </li>
 
-            </ul>
-        </nav>
+        </ul>
+    </nav>
 
-        <!-- Header -->
-        <header class="masthead d-flex">
-            <div id=“particles-js”></div>
-            <script src=“js/particles.js”></script>
-
-            <div class="" id= "looks">
+    <!-- Header -->
+    <header class="masthead d-flex">
+        <div id=“particles-js”></div>
+        <script src=“js/particles.js”> </script> <div class="" id="looks">
                 <img id=bgLogo src="img/face1.jpg" alt="failLoad"> 
                 
                 <div><img id="logo" src="img/rainbow_logo_transparent_background.png" alt="logoLoad"></div> 
@@ -219,7 +220,7 @@
             </div>
         </section>
         <section class="callout" id="results-callout">
-            <div class="container text-center">
+            <div class="container-fluid">
                 <div class="row" id="result-window">
                         <div class="col-3">
                                 <div class="results" id="testResults">
@@ -233,11 +234,11 @@
                             
                         </div>
                         <div class="col-3">
-                                <div id="textChart" style="height: 500px; opacity: 0.9">
+                                <div id="textChart" style="height: 500px; width: 500px; opacity: 0.9">
                                     </div>
                         </div>
                         <div class="col-3">
-                                <div id="imgChart" style="height: 500px;"></div>
+                                <div id="imgChart" style="height: 500px; width: 500px; margin-left: 20px; opacity: 0.9;"></div>
                         </div>
                         <div class="col-3">
                             <div class="results" id="imageResults">
