@@ -37,95 +37,102 @@
 
 
 <body id="page-top">
-    <div id="modal-wrapper" class="modal">
+    <div id="log-in" class="modal">
 
-        <form class="modal-content animate" action="/action_page.php">
+        <form class="modal-content animate">
 
-            <div class="imgcontainer">
-                <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
-                <img src="1.png" alt="Avatar" class="avatar">
-                <h1 style="text-align:center">Modal Popup Box</h1>
-            </div>
 
-            <div class="container">
-                <input type="text" placeholder="Enter Username" name="uname">
-                <input type="password" placeholder="Enter Password" name="psw">
-                <button type="submit">Login</button>
-                <input type="checkbox" style="margin:26px 20px;"> Remember me
-                <a href="#sign-in" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">New
-                    User?</a>
-                <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot
-                    Password ?</a>
-            </div>
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('log-in').style.display='none'" class="close" title="Close PopUp">&times;</span>
+                    <img src="1.png" alt="Avatar" class="avatar">
+                    <h1 style="text-align:center">Log In!</h1>
+                </div>
+
+                <div class="container">
+                    <input type="email" placeholder="Enter E-mail Address" name="uname" id="emailInput">
+                    <input type="password" placeholder="Enter Password" name="psw" id="passInput">
+                    <div class="errorMsg"></div>
+                    <button type="submit" id="logInBtn">Login</button>
+                    <input type="checkbox" style="margin:26px 20px;"> Remember me    
+                    <a href="#sign-in" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;" onclick="document.getElementById('sign-in').style.display='block'; document.getElementById('log-in').style.display='none';">New User?</a>
+                    <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
+                </div>
 
         </form>
 
     </div>
     <div id="sign-in" class="modal">
 
-        <form class="modal-content animate" action="/action_page.php">
+        <form class="modal-content animate">
 
             <div class="imgcontainer">
-                <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+                <span onclick="document.getElementById('sign-in').style.display='none'" class="close" title="Close PopUp">&times;</span>
                 <img src="1.png" alt="Avatar" class="avatar">
                 <h1 style="text-align:center">New User?</h1>
             </div>
 
             <div class="container">
-                <input type="text" placeholder="Enter Username" name="uname">
-                <input type="password" placeholder="Enter Password" name="psw">
-                <button type="submit">SignUp</button>
+                <input type="email" placeholder="Enter E-mail Address" id="emailSignInInput">
+                <input type="password" placeholder="Enter Password" name="psw" id="passSignInInput">
+                <div class="errorMsg"></div>
+                <button type="submit" id="signUp">SignUp</button>
             </div>
 
         </form>
-
     </div>
-    <!-- Navigation -->
-    <a class="menu-toggle rounded" href="#">
-        <i class="fas fa-bars"></i>
-    </a>
-    <nav id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <a class="js-scroll-trigger" href="#page-top">MooooD</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#page-top">Home</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#about">About Us</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#services">Submit analysis</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
-            </li>
+        <!-- Navigation -->
+        <a class="menu-toggle rounded" href="#">
+            <i class="fas fa-bars"></i>
+        </a>
+        <nav id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a class="js-scroll-trigger" href="#page-top">MooooD</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" href="#page-top">Home</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" href="#about">About Us</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" href="#services">Submit analysis</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" href="#contact">Contact Us</a>
+                </li>
 
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#signup" id="signUp">Sign Up</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <input type="email" class="form-control" id="emailInput" placeholder="email">
-            </li>
-            <li class="sidebar-nav-item">
-                <input type="password" class="form-control" id="passInput" placeholder="password">
-            </li>
+<!--
+                    <li class="sidebar-nav-item">
+                        <a class="js-scroll-trigger" href="#signup" id="signUp">Sign Up</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <input type="email" class="form-control" id="emailInput" placeholder="email">
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <input type="password" class="form-control" id="passInput" placeholder="password">
+                    </li>
+-->
 
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" id="logIn" onclick="document.getElementById('modal-wrapper').style.display='block'">Login</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" id="logOut">Logout</a>
-            </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" id="logIn" onclick="document.getElementById('log-in').style.display='block'">Login</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" id="logOut">Logout</a>
+                </li>
 
-        </ul>
-    </nav>
+            </ul>
+        </nav>
 
-    <!-- Header -->
-    <header class="masthead d-flex">
-        <div id=“particles-js”></div>
-        <script src=“js/particles.js-master/particles.js”> </script> <div class="" id="looks">
+        <!-- Header -->
+        <header class="masthead d-flex">
+            <div id=“particles-js”></div>
+            <script src=“js/particles.js”></script>
+
+            <div class="" id= "looks">
                 <img id=bgLogo src="img/BGtest1.jpg" alt="failLoad"> 
                 <div><img id="logo" src="img/rainbow_logo_transparent_background.png" alt="logoLoad"></div> 
             </div>

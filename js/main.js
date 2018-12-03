@@ -28,22 +28,28 @@ $(document).ready(function() {
     const storageRef = storageService.ref();
 
     //Login (on page)
-    $(document).on("click", "#logIn", function() {
+    $(document).on("click", "#logInBtn", function() {
+        $(".errorMsg").empty();
         event.preventDefault();
         email = $("#emailInput").val();
         pass = $("#passInput").val();
         var promise = auth.signInWithEmailAndPassword(email, pass);
-        promise.catch(e => console.log(e.message));
+        promise.catch(e => $(".errorMsg").text(e.message));
+        console.log("User logged in!")
     });
 
     //Signup (on page)
-    $(document).on("click", "#signUp", function(){
+    $(document).on("click", "#signUpBtn", function(){
+        $(".errorMsg").empty();
         event.preventDefault();
-        email = $("#emailInput").val();
-        pass = $("#passInput").val();
+        email = $("#emailSignInInput").val();
+        pass = $("#vbpassSignInInput").val();
+        console.log(email);
         var promise = auth.createUserWithEmailAndPassword(email, pass);
-        promise.catch(e => console.log(e.message));
-        console.log("hi");
+        promise.catch(e => $(".errorMsg").text(e.message));
+        console.log("user signed up")
+        
+//        location.reload();
         //          function addUserToDatabase(userId, email)
     });
 
@@ -51,14 +57,18 @@ $(document).ready(function() {
     $(document).on("click", "#logOut", function(event) {
         event.preventDefault();
         firebase.auth().signOut();
+        console.log("hi");
     });
 
     //Detects whether or not user has logged in
     auth.onAuthStateChanged(firebaseUser => {
         if (firebaseUser) {
+            logIn.style.display = "none";
+            signIn.style.display = "none";
             userID = firebaseUser.uid;
             email = firebaseUser.email;
             console.log("userID: " + userID);
+//            location.reload();
         } else {
             //user signs out
         };
@@ -391,10 +401,12 @@ $(document).ready(function() {
     });
     // If user clicks anywhere outside of the modal, Modal will close
 
-    var modal = document.getElementById('modal-wrapper');
+    var logIn = document.getElementById('log-in');
+    var signIn = document.getElementById('sign-in');
     window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
+        if (event.target == logIn || event.target == signIn) {
+            logIn.style.display = "none";
+            signIn.style.display = "none";
         };
     };
 
