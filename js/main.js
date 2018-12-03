@@ -28,24 +28,29 @@ $(document).ready(function() {
     const storageRef = storageService.ref();
 
     //Login (on page)
-    $(document).on("click", "#logIn", function() {
+    $(document).on("click", "#logInBtn", function() {
+        $(".errorMsg").empty();
         event.preventDefault();
         email = $("#emailInput").val();
         pass = $("#passInput").val();
         var promise = auth.signInWithEmailAndPassword(email, pass);
-        promise.catch(e => console.log(e.message));
-        location.reload();
+        promise.catch(e => $(".errorMsg").text(e.message));
+    
+        console.log("User logged in!")
     });
 
     //Signup (on page)
-    $(document).on("click", "#signUp", function(){
+    $(document).on("click", "#signUpBtn", function(){
+        $(".errorMsg").empty();
         event.preventDefault();
         email = $("#emailSignInInput").val();
         pass = $("#passSignInInput").val();
         console.log(email);
         var promise = auth.createUserWithEmailAndPassword(email, pass);
-        promise.catch(e => console.log(e.message));
-        location.reload();
+        promise.catch(e => $(".errorMsg").text(e.message));
+        console.log("user signed up")
+        
+//        location.reload();
         //          function addUserToDatabase(userId, email)
     });
 
@@ -62,6 +67,7 @@ $(document).ready(function() {
             userID = firebaseUser.uid;
             email = firebaseUser.email;
             console.log("userID: " + userID);
+//            location.reload();
         } else {
             //user signs out
         };
