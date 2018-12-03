@@ -271,8 +271,8 @@ height: auto;
 
 #journalSubmit {
   color: orange;
-  font-family: 'Autour One', cursive;
-  font-weight: 200;
+  font-family: 'Baloo Bhaijaan', cursive;
+  font-weight: 100;
   font-size: 45pt;
   text-shadow:1px 1px black;
 }
@@ -285,7 +285,8 @@ height: auto;
   font-family: 'Indie Flower';
 }
 #submit {
-  align-items: center;
+ align-items: center;
+  
 }
 
 .portfolio-item {
@@ -401,7 +402,7 @@ footer.footer .social-link {
   width: 4rem;
   line-height: 4.3rem;
   font-size: 1.5rem;
-  background-color: #1D809F;
+  background-color: black;
   -webkit-transition: background-color 0.15s ease-in-out;
   transition: background-color 0.15s ease-in-out;
   -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
@@ -423,7 +424,7 @@ a:hover, a:focus, a:active {
 }
 
 .btn-primary {
-  background-color: #1D809F !important;
+  background-color: white !important;
   border-color: #1D809F !important;
   color: #fff !important;
 }
