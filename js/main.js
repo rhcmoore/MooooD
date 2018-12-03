@@ -285,15 +285,24 @@ $(document).ready(function() {
             // set image query URL to imgur link (generated from user-submitted file)
             handleFileUploadSubmit(event);
         }
-        $(".results").css("visibility", "hidden");
-        $("#results-callout").show().css("background-image","url('img/proccessGiphy.gif')");
+        // $(".results").css("visibility", "hidden");
+        // Hide results
+        $(".results").toggleClass("hideResults");
+        // $("#results-callout").show().css("background-image","url('img/proccessGiphy.gif')");
+        // show loading gif
+        $("#results-callout").show().toggleClass("loading-gif");
         // make call to Face++ and update DOM
         // We need to wait for imgur to process & upload the new image, setting the imageQueryURL variable
         setTimeout(function(){callFacePlusPlus()}, 6000);
         // make call to Indico and update DOM
         setTimeout(function(){callIndico()}, 6000);
-        setTimeout(function(){ $(".results").css("visibility", "visible"); }, 6000);
-        setTimeout(function(){ $("#results-callout").css("background-image","url('https://s22295.pcdn.co/wp-content/uploads/pitching2.jpg')") }, 6000);
+        // setTimeout(function(){ $(".results").css("visibility", "visible"); }, 6000);
+        // show Results
+        setTimeout(function(){ $(".results").toggleClass("hideResults"); }, 6000);
+        // setTimeout(function(){ $("#results-callout").css("background-image","url('https://s22295.pcdn.co/wp-content/uploads/pitching2.jpg')") }, 6000);
+        // show zen rocks background
+        setTimeout(function(){ $("#results-callout").toggleClass("loading-gif") } , 6000);
+
         var user = firebase.auth().currentUser;
 
         if (user) {//write data to database
