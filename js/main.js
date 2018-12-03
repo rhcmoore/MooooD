@@ -330,28 +330,63 @@ $(document).ready(function() {
             // get the emotion results
             var emotionResults = userPost[userEntries[i]];
             // dynamically create new 'card' with past journal entries
-            var newDiv = $("<div>").addClass("col-lg-5 emotion-card");
+            // var newDiv = $("<div>").addClass("col-lg-3 emotion-card");
+            // var newDate = $("<p>").text(new Date(emotionResults.entryDate).toISOString().split("T")[0]).addClass("emotion-card-date");
+            // var newImage = $("<img>").attr("src", emotionResults.imageLink).addClass("emotion-card-image");
+            // var newPost = $("<p>").text(emotionResults.journalPost).addClass("emotion-card-post");
+            // var newTextUL = $("<div>").addClass("col-lg-6").addClass("col-lg-6 emotion-card-text-results");
+            // var newtextAngerLI = $("<p>").text("Text Anger: " + emotionResults.textAnger);
+            // var newtextFearLI = $("<p>").text("Text Fear: " + emotionResults.textFear);
+            // var newtextJoyLI = $("<p>").text("Text Joy: " + emotionResults.textJoy);
+            // var newtextSadnessLI = $("<p>").text("Text Sadness: " + emotionResults.textSadness);
+            // var newtextSurpriseLI = $("<p>").text("Text Surprise: " + emotionResults.textSurprise);
+            // newTextUL.append(newtextAngerLI, newtextFearLI, newtextJoyLI, newtextSadnessLI, newtextSurpriseLI).addClass("col-lg-6")
+            // var newImageUL = $("<div>").addClass("col-lg-6").addClass("col-lg-6 emotion-card-image-results");;
+            // var newimageAngerLI = $("<p>").text("Image Anger: " + emotionResults.imageAnger);
+            // var newimageFearLI = $("<p>").text("Image Fear: " + emotionResults.imageFear);
+            // var newimageJoyLI = $("<p>").text("Image Joy: " + emotionResults.imageJoy);
+            // var newimageSadnessLI = $("<p>").text("Image Sadness: " + emotionResults.imageSadness);
+            // var newimageSurpriseLI = $("<p>").text("Image Surprise: " + emotionResults.imageSurprise);
+            // var newimageDisgustLI = $("<p>").text("Image Disgust: " + emotionResults.imageDisgust);
+            // var newimageNeutralLI = $("<p>").text("Image Neutral: " + emotionResults.imageNeutral);
+            // newImageUL.append(newimageAngerLI, newimageFearLI, newimageJoyLI, newimageSadnessLI, newimageSurpriseLI, newimageDisgustLI, newimageNeutralLI).addClass("col-lg-6");
+            // newDiv.append(newDate, newImage, newPost, newTextUL, newImageUL);
+            // $("#journal-history").prepend(newDiv);
+
+            var newDiv = $("<div>").addClass("col-lg-3 emotion-card");
             var newDate = $("<p>").text(new Date(emotionResults.entryDate).toISOString().split("T")[0]).addClass("emotion-card-date");
             var newImage = $("<img>").attr("src", emotionResults.imageLink).addClass("emotion-card-image");
+            newDiv.append(newDate, newImage);
+            var newOverlay = $("<div>").addClass("overlay");
             var newPost = $("<p>").text(emotionResults.journalPost).addClass("emotion-card-post");
-            var newTextUL = $("<ul>").addClass("col-lg-6").addClass("emotion-card-text-results");
-            var newtextAngerLI = $("<li>").text("Text Anger: " + emotionResults.textAnger);
-            var newtextFearLI = $("<li>").text("Text Fear: " + emotionResults.textFear);
-            var newtextJoyLI = $("<li>").text("Text Joy: " + emotionResults.textJoy);
-            var newtextSadnessLI = $("<li>").text("Text Sadness: " + emotionResults.textSadness);
-            var newtextSurpriseLI = $("<li>").text("Text Surprise: " + emotionResults.textSurprise);
+            var newTextUL = $("<ul>").addClass("col-lg-6").addClass("col-lg-6 emotion-card-text-results");
+                var newtextAngerLI = $("<li>").text("Text Anger: " + emotionResults.textAnger);
+                var newtextFearLI = $("<li>").text("Text Fear: " + emotionResults.textFear);
+                var newtextJoyLI = $("<li>").text("Text Joy: " + emotionResults.textJoy);
+                var newtextSadnessLI = $("<li>").text("Text Sadness: " + emotionResults.textSadness);
+                var newtextSurpriseLI = $("<li>").text("Text Surprise: " + emotionResults.textSurprise);
             newTextUL.append(newtextAngerLI, newtextFearLI, newtextJoyLI, newtextSadnessLI, newtextSurpriseLI).addClass("col-lg-6")
-            var newImageUL = $("<ul>").addClass("col-lg-6").addClass("emotion-card-image-results");;
-            var newimageAngerLI = $("<li>").text("Image Anger: " + emotionResults.imageAnger);
-            var newimageFearLI = $("<li>").text("Image Fear: " + emotionResults.imageFear);
-            var newimageJoyLI = $("<li>").text("Image Joy: " + emotionResults.imageJoy);
-            var newimageSadnessLI = $("<li>").text("Image Sadness: " + emotionResults.imageSadness);
-            var newimageSurpriseLI = $("<li>").text("Image Surprise: " + emotionResults.imageSurprise);
-            var newimageDisgustLI = $("<li>").text("Image Disgust: " + emotionResults.imageDisgust);
-            var newimageNeutralLI = $("<li>").text("Image Neutral: " + emotionResults.imageNeutral);
+            var newImageUL = $("<ul>").addClass("col-lg-6").addClass("col-lg-6 emotion-card-image-results");;
+                var newimageAngerLI = $("<li>").text("Image Anger: " + emotionResults.imageAnger);
+                var newimageFearLI = $("<li>").text("Image Fear: " + emotionResults.imageFear);
+                var newimageJoyLI = $("<li>").text("Image Joy: " + emotionResults.imageJoy);
+                var newimageSadnessLI = $("<li>").text("Image Sadness: " + emotionResults.imageSadness);
+                var newimageSurpriseLI = $("<li>").text("Image Surprise: " + emotionResults.imageSurprise);
+                var newimageDisgustLI = $("<li>").text("Image Disgust: " + emotionResults.imageDisgust);
+                var newimageNeutralLI = $("<li>").text("Image Neutral: " + emotionResults.imageNeutral);
             newImageUL.append(newimageAngerLI, newimageFearLI, newimageJoyLI, newimageSadnessLI, newimageSurpriseLI, newimageDisgustLI, newimageNeutralLI).addClass("col-lg-6");
-            newDiv.append(newDate, newImage, newPost, newTextUL, newImageUL);
+            newOverlay.append(newPost);
+            newOverlay.append(newTextUL);
+            newOverlay.append(newImageUL);
+            newDiv.append(newOverlay);
             $("#journal-history").prepend(newDiv);
+
+            // <div class="container">
+            //     <img src="img_avatar.png" alt="Avatar" class="image">
+            //     <div class="overlay">
+            //         <div class="text">Hello World</div>
+            //     </div>
+            // </div>
         };
     });
     // If user clicks anywhere outside of the modal, Modal will close
