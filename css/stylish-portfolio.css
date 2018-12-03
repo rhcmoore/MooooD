@@ -104,7 +104,7 @@ h6 {
 }
 
 #bgLogo {
-  filter: blur(2.5px);
+  
   min-height: 30rem;
   display: table;
   width: 100%;
@@ -112,6 +112,11 @@ h6 {
   object-fit: cover;
   margin-top: 0px;
   
+}
+
+#about {
+  color: black;
+  background-color: grey;
 }
 
 .masthead h1 {
@@ -223,7 +228,7 @@ height: auto;
 }
 
 .service-icon {
-  background-color: #fff;
+  background-color: grey;
   color: #1D809F;
   height: 7rem;
   width: 7rem;
