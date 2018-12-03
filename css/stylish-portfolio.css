@@ -383,12 +383,33 @@ height: auto;
  
 }
 
-
+.Member {
+  position: relative;
+  width: 100%;
+}
 #bottomLogo {
   margin-top: -140px;
   margin-left: 0px;
   height: auto;
   width: 100%;
+  position: relative;
+  z-index: -1000;
+}
+
+.signUpBottomPage {
+  align-content: center;
+  position: relative;
+  z-index: 1000;
+}
+
+.memberList {
+  font-family: 'Baloo Bhaijaan', cursive;
+  color: aliceblue;
+  text-shadow: #ecb807;
+  font-weight: 100;
+  font-size: 45pt;
+  text-shadow: 1px 1px black;
+  z-index: 1;
 }
 
 footer.footer {
