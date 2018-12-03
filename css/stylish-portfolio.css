@@ -144,7 +144,7 @@ height: auto;
   transition: all 0.4s ease 0s;
   -webkit-transform: translateX(250px);
   transform: translateX(250px);
-  background: #1D809F;
+  background: orange;
   border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -258,6 +258,7 @@ height: auto;
 
 .form-control {
   opacity: .5;
+  
  }
 
 .file-select {
@@ -283,9 +284,16 @@ height: auto;
 }
 #text-submit {
   font-family: 'Indie Flower';
+  color: black;
 }
 #submit {
  align-items: center;
+ font-family: 'Autour One', cursive;
+  
+}
+
+.content-section {
+  background-color: whitesmoke;
   
 }
 
