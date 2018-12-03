@@ -466,11 +466,19 @@ height: auto;
 #memberList {
   font-family: 'Baloo Bhaijaan', cursive;
   color: aliceblue;
-  text-shadow: #ecb807;
+  text-shadow: orangered;
   font-weight: 50;
   font-size: 20pt;
   text-shadow: 1px 1px black;
-  z-index: 1;
+ 
+}
+
+#memberReason {
+  font-weight: 50;
+  font-size: 20pt;
+  text-shadow: 1px 1px black;
+  color: orangered;
+  font-family: 'Baloo Bhaijaan', cursive;
 }
 
 footer.footer {
