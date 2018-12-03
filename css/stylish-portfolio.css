@@ -238,7 +238,7 @@ height: auto;
 }
 
 .callout {
-  padding: 5px;
+  padding: 55px;
   background:url("../img/pos3.0.jpg");
   background-position: center center;
   background-repeat: no-repeat;
@@ -254,32 +254,22 @@ height: auto;
 #results-callout {
   background-image: url('https://s22295.pcdn.co/wp-content/uploads/pitching2.jpg');
   color: white;
-  height: 75%;
-  width: 100%;
+  height: 100%;
+  width: auto;
 }
 
 .results {
   color: orange;
   font-family: 'Autour One', cursive;
   font-weight: 200;
-  font-size: 16pt;
+  font-size: 12pt;
   text-shadow:1px 1px black;  
 }
 
-.results p {
-  font-weight: 300;
-  color: black;
-  text-shadow:2px 2px white;  
-
+#textResults {
+  float: left;
 }
 
-#testResults {
-  float: right;
-}
-
-.container-fluid {
-  margin-top: 200px;
-}
 
 .form-control {
   opacity: .5;
@@ -415,7 +405,6 @@ height: auto;
 
 #result-window {
   background-image: black;
-  width: 100%;
  
 }
 
@@ -431,6 +420,11 @@ height: auto;
   background-image: url(‘img/proccessGiphy.gif’);
   height: auto;
   width: 100%;
+}
+
+
+#results-callout { 
+  background-image: url("https://s22295.pcdn.co/wp-content/uploads/pitching2.jpg");
 }
 
 #whiteLogo{
