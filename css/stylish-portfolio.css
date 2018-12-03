@@ -246,6 +246,8 @@ height: auto;
 #results-callout {
   background-image: url('https://s22295.pcdn.co/wp-content/uploads/pitching2.jpg');
   color: white;
+  height: 100%;
+  width: auto;
 }
 
 .results {
@@ -390,6 +392,21 @@ height: auto;
   background-image: white;
  
 }
+
+.hideResults {
+  visibility: hidden;
+}
+
+.loading-gif {
+  background-image: url(‘img/proccessGiphy.gif’);
+}
+
+
+#results-callout { 
+  background-image: url("https://s22295.pcdn.co/wp-content/uploads/pitching2.jpg");
+}
+
+
 
 
 #bottomLogo {
