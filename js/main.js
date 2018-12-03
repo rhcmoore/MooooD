@@ -286,7 +286,7 @@ $(document).ready(function() {
             handleFileUploadSubmit(event);
         }
         $(".results").css("visibility", "hidden");
-        $("#results-callout").show().css("background-image","url('https://media1.tenor.com/images/918f9c0214da68656905b1be5c052300/tenor.gif')");
+        $("#results-callout").show().css("background-image","url('img/proccessGiphy.gif')");
         // make call to Face++ and update DOM
         // We need to wait for imgur to process & upload the new image, setting the imageQueryURL variable
         setTimeout(function(){callFacePlusPlus()}, 6000);
@@ -309,7 +309,7 @@ $(document).ready(function() {
 
     });
     // When a child is added to the record
-    database.ref(userData).on("child_added", function(snapshot) {
+    database.ref().on("child_added", function(snapshot) {
         console.log("Child added");
         // get all user posts
         var userPost = snapshot.val()[userID];
@@ -317,21 +317,21 @@ $(document).ready(function() {
         var userEntries = Object.keys(userPost);
         console.log(userEntries);
         // for each date-stamped post
-        for (var i=0; i<userEntries.length - 3; i++) {
+        for (var i=0; i<userEntries.length; i++) {
             // get the emotion results
             var emotionResults = userPost[userEntries[i]];
             // dynamically create new 'card' with past journal entries
             var newDiv = $("<div>").addClass("col-lg-5 emotion-card").css("border", "1px solid grey").css("margin", "5px");
-            var newDate = $("<p>").text(new Date(emotionResults.entryDate).toISOString().split("T")[0]);
-            var newImage = $("<img>").attr("src", emotionResults.imageLink).css("width", "200px").css("float", "right");
-            var newPost = $("<p>").text(emotionResults.journalPost);
-            var newTextUL = $("<ul>").addClass("col-lg-6");
+            var newDate = $("<p>").text(new Date(emotionResults.entryDate).toISOString().split("T")[0]).addClass("emotion-card-date");
+            var newImage = $("<img>").attr("src", emotionResults.imageLink).css("width", "200px").css("float", "right").addClass("emotion-card-image");
+            var newPost = $("<p>").text(emotionResults.journalPost).addClass("emotion-card-post");
+            var newTextUL = $("<ul>").addClass("col-lg-6").addClass("emotion-card-text-results");
             var newtextAngerLI = $("<li>").text("Text Anger: " + emotionResults.textAnger);
             var newtextFearLI = $("<li>").text("Text Fear: " + emotionResults.textFear);
             var newtextJoyLI = $("<li>").text("Text Joy: " + emotionResults.textJoy);
             var newtextSadnessLI = $("<li>").text("Text Sadness: " + emotionResults.textSadness);
             var newtextSurpriseLI = $("<li>").text("Text Surprise: " + emotionResults.textSurprise);
-            newTextUL.append(newtextAngerLI, newtextFearLI, newtextJoyLI, newtextSadnessLI, newtextSurpriseLI).addClass("col-lg-6");
+            newTextUL.append(newtextAngerLI, newtextFearLI, newtextJoyLI, newtextSadnessLI, newtextSurpriseLI).addClass("col-lg-6").addClass("emotion-card-image-results");
             var newImageUL = $("<ul>").addClass("col-lg-6");
             var newimageAngerLI = $("<li>").text("Image Anger: " + emotionResults.imageAnger);
             var newimageFearLI = $("<li>").text("Image Fear: " + emotionResults.imageFear);
@@ -351,6 +351,11 @@ $(document).ready(function() {
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
-        }
-    }
+        };
+    };
+
+    particlesJS.load(`particles-js`, `particals.json`, function() {
+    console.log(`callback - particles.js config loaded`);
+    }); 
+
 });
