@@ -321,9 +321,9 @@ $(document).ready(function() {
             // get the emotion results
             var emotionResults = userPost[userEntries[i]];
             // dynamically create new 'card' with past journal entries
-            var newDiv = $("<div>").addClass("col-lg-5 emotion-card").css("border", "1px solid grey").css("margin", "5px");
+            var newDiv = $("<div>").addClass("col-lg-5 emotion-card");
             var newDate = $("<p>").text(new Date(emotionResults.entryDate).toISOString().split("T")[0]).addClass("emotion-card-date");
-            var newImage = $("<img>").attr("src", emotionResults.imageLink).css("width", "200px").css("float", "right").addClass("emotion-card-image");
+            var newImage = $("<img>").attr("src", emotionResults.imageLink).addClass("emotion-card-image");
             var newPost = $("<p>").text(emotionResults.journalPost).addClass("emotion-card-post");
             var newTextUL = $("<ul>").addClass("col-lg-6").addClass("emotion-card-text-results");
             var newtextAngerLI = $("<li>").text("Text Anger: " + emotionResults.textAnger);
@@ -331,8 +331,8 @@ $(document).ready(function() {
             var newtextJoyLI = $("<li>").text("Text Joy: " + emotionResults.textJoy);
             var newtextSadnessLI = $("<li>").text("Text Sadness: " + emotionResults.textSadness);
             var newtextSurpriseLI = $("<li>").text("Text Surprise: " + emotionResults.textSurprise);
-            newTextUL.append(newtextAngerLI, newtextFearLI, newtextJoyLI, newtextSadnessLI, newtextSurpriseLI).addClass("col-lg-6").addClass("emotion-card-image-results");
-            var newImageUL = $("<ul>").addClass("col-lg-6");
+            newTextUL.append(newtextAngerLI, newtextFearLI, newtextJoyLI, newtextSadnessLI, newtextSurpriseLI).addClass("col-lg-6")
+            var newImageUL = $("<ul>").addClass("col-lg-6").addClass("emotion-card-image-results");;
             var newimageAngerLI = $("<li>").text("Image Anger: " + emotionResults.imageAnger);
             var newimageFearLI = $("<li>").text("Image Fear: " + emotionResults.imageFear);
             var newimageJoyLI = $("<li>").text("Image Joy: " + emotionResults.imageJoy);
