@@ -243,6 +243,11 @@ height: auto;
  
 }
 
+.col-lg-6 {
+  display: inline;
+}
+
+
 #results-callout {
   background-image: url('https://s22295.pcdn.co/wp-content/uploads/pitching2.jpg');
   color: white;
@@ -254,9 +259,18 @@ height: auto;
   color: orange;
   font-family: 'Autour One', cursive;
   font-weight: 200;
-  font-size: 20pt;
-  text-shadow:1px 1px black;
+  font-size: 12pt;
+  text-shadow:1px 1px black;  
 }
+
+#textResults {
+  float: left;
+}
+
+/* #imageResults {
+  float: right;
+} */
+
 
 .form-control {
   opacity: .5;
