@@ -425,8 +425,10 @@ height: auto;
 }
 
 #whiteLogo{
-  margin-left: 500px;
-  margin-bottom: 60px;
+  margin-left: 600px;
+  margin-bottom: 500px;
+  margin-top: -400px;
+
 }
 
 #overlay {
@@ -440,15 +442,20 @@ height: auto;
   height: 800px;
   width: 100%;
   position: relative;
-  z-index: -1000;
   margin-bottom: 300px;
+
 }
 
 .signUpBottomPage {
   position: relative;
-  z-index: 1000;
   background-color: rgb(28, 27, 27);
+  width: 600px;
+}
 
+#idBut {
+  margin-top: -300px;
+  margin-bottom: -200px;
+  width: 40px;
 }
 
 .memberList {
