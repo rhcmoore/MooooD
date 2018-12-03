@@ -543,4 +543,57 @@ a:hover, a:focus, a:active {
 .text-secondary {
   color: #ecb807 !important;
 }
+.emotion-card {
+  /* margin: 10px; */
+  width: 80%;
+  background: white;
+  color: darkgrey;
+  border: 1px solid lightgrey;
+}
 
+.emotion-card-text-results {
+  margin: 5px;
+} 
+.emotion-card-image-results {
+  margin: 5px;
+}
+.emotion-card li {
+  margin: 5px;
+  font-size: 0.6em;
+} 
+.emotion-card-post {
+  font-size: 0.7em;
+  position: relative;
+
+}
+
+/* Edits for image hover function */
+.emotion-card-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: orange;
+}
+
+.emotion-card:hover .overlay {
+  opacity: 1;
+}
+
+.emotion-card-post, .emotion-card-text-results, .emotion-card-image-results {
+  color: white;
+  font-size: 20px;
+  font-family: 'Autour One', cursive;
+  text-align: center;
+}
