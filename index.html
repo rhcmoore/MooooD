@@ -47,7 +47,7 @@
                     <input type="password" placeholder="Enter Password" name="psw">        
                     <button type="submit">Login</button>
                     <input type="checkbox" style="margin:26px 20px;"> Remember me    
-                    <a href="#sign-in" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">New User?</a>
+                    <a href="#sign-in" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;" onclick="document.getElementById('sign-in').style.display='block'">New User?</a>
                     <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
                 </div>
 
@@ -98,15 +98,17 @@
                     <a class="js-scroll-trigger" href="#contact">Contact Us</a>
                 </li>
 
-                <li class="sidebar-nav-item">
-                    <a class="js-scroll-trigger" href="#signup" id="signUp">Sign Up</a>
-                </li>
-                <li class="sidebar-nav-item">
-                    <input type="email" class="form-control" id="emailInput" placeholder="email">
-                </li>
-                <li class="sidebar-nav-item">
-                    <input type="password" class="form-control" id="passInput" placeholder="password">
-                </li>
+<!--
+                    <li class="sidebar-nav-item">
+                        <a class="js-scroll-trigger" href="#signup" id="signUp">Sign Up</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <input type="email" class="form-control" id="emailInput" placeholder="email">
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <input type="password" class="form-control" id="passInput" placeholder="password">
+                    </li>
+-->
 
                 <li class="sidebar-nav-item">
                     <a class="js-scroll-trigger" id="logIn" onclick="document.getElementById('modal-wrapper').style.display='block'">Login</a>
