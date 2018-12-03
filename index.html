@@ -39,18 +39,19 @@
 <body id="page-top">
     <div id="log-in" class="modal">
 
-        <form class="modal-content animate" action="/action_page.php">
+        <form class="modal-content animate">
 
 
                 <div class="imgcontainer">
                     <span onclick="document.getElementById('log-in').style.display='none'" class="close" title="Close PopUp">&times;</span>
                     <img src="1.png" alt="Avatar" class="avatar">
-                    <h1 style="text-align:center">Modal Popup Box</h1>
+                    <h1 style="text-align:center">Log In!</h1>
                 </div>
 
                 <div class="container">
                     <input type="email" placeholder="Enter E-mail Address" name="uname" id="emailInput">
-                    <input type="password" placeholder="Enter Password" name="psw" id="passInput">        
+                    <input type="password" placeholder="Enter Password" name="psw" id="passInput">
+                    <div class="errorMsg"></div>
                     <button type="submit" id="logInBtn">Login</button>
                     <input type="checkbox" style="margin:26px 20px;"> Remember me    
                     <a href="#sign-in" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;" onclick="document.getElementById('sign-in').style.display='block'; document.getElementById('log-in').style.display='none';">New User?</a>
@@ -62,7 +63,7 @@
     </div>
     <div id="sign-in" class="modal">
 
-        <form class="modal-content animate" action="/action_page.php">
+        <form class="modal-content animate">
 
             <div class="imgcontainer">
                 <span onclick="document.getElementById('sign-in').style.display='none'" class="close" title="Close PopUp">&times;</span>
@@ -73,6 +74,7 @@
             <div class="container">
                 <input type="email" placeholder="Enter E-mail Address" id="emailSignInInput">
                 <input type="password" placeholder="Enter Password" name="psw" id="passSignInInput">
+                <div class="errorMsg"></div>
                 <button type="submit" id="signUp">SignUp</button>
             </div>
 

@@ -35,7 +35,6 @@ $(document).ready(function() {
         pass = $("#passInput").val();
         var promise = auth.signInWithEmailAndPassword(email, pass);
         promise.catch(e => $(".errorMsg").text(e.message));
-    
         console.log("User logged in!")
     });
 
@@ -44,7 +43,7 @@ $(document).ready(function() {
         $(".errorMsg").empty();
         event.preventDefault();
         email = $("#emailSignInInput").val();
-        pass = $("#passSignInInput").val();
+        pass = $("#vbpassSignInInput").val();
         console.log(email);
         var promise = auth.createUserWithEmailAndPassword(email, pass);
         promise.catch(e => $(".errorMsg").text(e.message));
@@ -64,6 +63,8 @@ $(document).ready(function() {
     //Detects whether or not user has logged in
     auth.onAuthStateChanged(firebaseUser => {
         if (firebaseUser) {
+            logIn.style.display = "none";
+            signIn.style.display = "none";
             userID = firebaseUser.uid;
             email = firebaseUser.email;
             console.log("userID: " + userID);
