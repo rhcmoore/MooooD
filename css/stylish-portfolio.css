@@ -430,9 +430,9 @@ height: auto;
 #whiteLogo{
   /* margin-left: 600px;
   margin-top: -400px; */
-  height: 600px;
-  width: 1000px;
-  align: center;
+  height: 400px;
+  width: 700px;
+  align-content: center;
 
 }
 
