@@ -13,8 +13,8 @@ input[type=email], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-    background-color: #4CAF50;
-    color: white;
+    background-color: black;
+    color: orange;
     padding: 14px 20px;
     margin: 8px 26px;
     border: none;
@@ -35,7 +35,7 @@ button:hover {
 .avatar {
     width: 200px;
 	height:200px;
-    border-radius: 50%;
+    
 }
 
 /* The Modal (background) */
