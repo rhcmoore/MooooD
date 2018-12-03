@@ -48,7 +48,7 @@ $(document).ready(function() {
         $(".errorMsg").empty();
         event.preventDefault();
         email = $("#emailSignInInput").val();
-        pass = $("#vbpassSignInInput").val();
+        pass = $("#passSignInInput").val();
         console.log(email);
         var promise = auth.createUserWithEmailAndPassword(email, pass);
         promise.catch(e => $(".errorMsg").text(e.message));
@@ -249,6 +249,10 @@ $(document).ready(function() {
                 textSurprise: textSurprise,
             });
             // Update DOM
+            console.log(textAnger);
+            console.log(textFear);
+            console.log(textJoy);
+            
             $("#text-anger").text(textAnger + "%");
             $("#text-fear").text(textFear + "%");
             $("#text-joy").text(textJoy + "%");
