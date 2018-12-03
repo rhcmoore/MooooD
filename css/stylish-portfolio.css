@@ -393,6 +393,10 @@ height: auto;
  
 }
 
+.Member {
+  position: relative;
+  width: 100%;
+}
 .hideResults {
   visibility: hidden;
 }
@@ -406,14 +410,31 @@ height: auto;
   background-image: url("https://s22295.pcdn.co/wp-content/uploads/pitching2.jpg");
 }
 
-
-
-
 #bottomLogo {
   margin-top: -140px;
   margin-left: 0px;
-  height: auto;
+  height: 800px;
   width: 100%;
+  position: relative;
+  z-index: -1000;
+  margin-bottom: 300px;
+}
+
+.signUpBottomPage {
+  position: relative;
+  z-index: 1000;
+  background-color: rgb(28, 27, 27);
+
+}
+
+.memberList {
+  font-family: 'Baloo Bhaijaan', cursive;
+  color: aliceblue;
+  text-shadow: #ecb807;
+  font-weight: 50;
+  font-size: 20pt;
+  text-shadow: 1px 1px black;
+  z-index: 1;
 }
 
 footer.footer {
