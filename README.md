@@ -2,32 +2,33 @@
 
 [Mood, the Journal that Writes Back](rhcmoore.github.io/Project1/) is a journal that receives a journal entry and an image of the users face, analyzes the entry through indico and the image through Face++ and returns a[Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). The theme features multiple content sections with an off canvas navigation menu.
 
-## Preview
-
-[![Stylish Portfolio Preview](https://startbootstrap.com/assets/img/templates/stylish-portfolio.jpg)](https://blackrockdigital.github.io/startbootstrap-stylish-portfolio/)
-
-**[View Live Preview](https://blackrockdigital.github.io/startbootstrap-stylish-portfolio/)**
-
-## Status
-
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-stylish-portfolio/master/LICENSE)
-
 ## Usage
-
-### Basic Usage
-
-After downloading, simply edit the HTML and CSS files included with the template in your favorite text editor to make changes. These are the only files you need to worry about, you can ignore everything else! To preview the changes you make to the code, you can open the `index.html` file in your web browser.
-
-
-## Bugs and Issues
-
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-stylish-portfolio/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/stylish-portfolio/).
+No special features needed to access Moood. Moood can be opened in your default browser.  
 
 ## About
 
 What is MoooooD?
-	At MoooooD, we believe a journal should be more than just a journal with memories. After writing a journal entry and taking a quick snapshot, MoooooD uses Indico’s API and Face++ to give an unique and accurate machine based understanding of your everyday emotions.(insert AI buzzword somewhere around here). After using MüD, we hope you can visualize how your mood changes from day to day! 
+	At MoooooD, we believe a journal should be more than just a journal with memories. After writing a journal entry and taking a quick snapshot, MoooooD uses Indico’s API and Face++ to give an unique and accurate machine based understanding of your everyday emotions.(insert AI buzzword somewhere around here). After using MooooD, we hope you can visualize how your mood changes from day to day! 
+
+##Basic Usage
+Scroll down to enter a journal entry and submit an image, either [URL] or [UpLoad], and watch the magic happen! Sentiment based analytics returns feedback on both the journal entry text and the image. Log in to track your progress. 
+
+##How it Works
+We used Google Firebase to store information on User Profiles and API response feedback from Indico and Face++. 
+Imgur was used to send image to Face++ API. 
+Bootstrap templates and Google Fonts.
+AnyChart for result feedback.
+jQuery
+
+##Collaborators
+Ryan Moore
+Charles Gedeon
+Maja Morales
+Michael Wu
 
 ## Copyright and License
+The MIT License (MIT)
+
+Copyright (c) 2013-2018 Blackrock Digital LLC
 
 
