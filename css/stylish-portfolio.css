@@ -551,21 +551,19 @@ a:hover, a:focus, a:active {
   color: #ecb807 !important;
 }
 .emotion-card {
-  /* margin: 10px; */
-  width: 80%;
   background: white;
   color: darkgrey;
   border: 1px solid lightgrey;
 }
 
-.emotion-card-text-results {
+.emotion-card-text-results p {
   margin: 5px;
 } 
-.emotion-card-image-results {
+.emotion-card-image-results p {
   margin: 5px;
 }
 .emotion-card li {
-  margin: 5px;
+  /* margin: 5px; */
   font-size: 0.6em;
 } 
 .emotion-card-post {
@@ -579,7 +577,7 @@ a:hover, a:focus, a:active {
   display: block;
   width: 100%;
   height: auto;
-  margin-bottom: 50px;
+  margin: 0 auto;
 }
 
 .overlay {

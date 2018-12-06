@@ -1,34 +1,37 @@
-# [Mood, the Journal that Writes Back](rhcmoore.github.io/Project1/)
+# [MooooD](rhcmoore.github.io/Project1/)
 
-[Mood, the Journal that Writes Back](rhcmoore.github.io/Project1/) is a journal that receives a journal entry and an image of the users face, analyzes the entry through indico and the image through Face++ and returns a[Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). The theme features multiple content sections with an off canvas navigation menu.
+[The Journal that Writes Back](https://rhcmoore.github.io/Project1/). 
 
-## Usage
-No special features needed to access Moood. Moood can be opened in your default browser.  
+!["MoooD gif"](https://media.giphy.com/media/ksKF7WxzcdE11dD2gj/giphy.gif)
+<!-- Your browser does not support the video tag. -->
+
+## Getting Started 
+Write to your journal about your day, and include a representative image of your face. After you submit your entry, view a sentiment analysis of your text and an emotional analysis of your facial emotions. How are you feeling today?
+
+Continue and see a running history of your journal entries. How have your emotions changed over time? 
 
 ## About
 
-What is MoooooD?
-	At MoooooD, we believe a journal should be more than just a journal with memories. After writing a journal entry and taking a quick snapshot, MoooooD uses Indico’s API and Face++ to give an unique and accurate machine based understanding of your everyday emotions.(insert AI buzzword somewhere around here). After using MooooD, we hope you can visualize how your mood changes from day to day! 
+We set out to create a better journal. Combined with the positive effects of journalling, we believe an analysis of our emotions could help us better understand ourselves and contextualize the world around us.
 
-##Basic Usage
-Scroll down to enter a journal entry and submit an image, either [URL] or [UpLoad], and watch the magic happen! Sentiment based analytics returns feedback on both the journal entry text and the image. Log in to track your progress. 
+MoooooD takes advantage of the API services of [Indico](https://indico.io/), [Face++](https://www.faceplusplus.com/), and [Imgur](https://api.imgur.com/) to provide a unique look at your everyday emotions.
 
-##How it Works
-We used Google Firebase to store information on User Profiles and API response feedback from Indico and Face++. 
-Imgur was used to send image to Face++ API. 
-Bootstrap templates and Google Fonts.
-AnyChart for result feedback.
-jQuery
+<img src="./img/readFlow.png">
 
-##Collaborators
-Ryan Moore
-Charles Gedeon
-Maja Morales
-Michael Wu
-
-## Copyright and License
-The MIT License (MIT)
-
-Copyright (c) 2013-2018 Blackrock Digital LLC
+The web application takes advantage of the Authentication, Database, and Storage functionality of Firebase to maintain user profiles with persistent journal logs, photos, and analysis results.
 
 
+
+## Authors
+Ryan Moore - [github.com/rhcmoore](https://github.com/rhcmoore)
+
+Maja Morales - [github.com/ajam2617](https://github.com/ajam2617)
+
+Charles Gedeon - [github.com/OCGedeon](https://github.com/OCGedeon)
+
+Michael Wu - [github.com/wufasa](https://github.com/wufasa)
+
+## License
+This project is licensed under the MIT License - see the LICENSE.md file for details.
+
+<img src="./img/readText.png">
