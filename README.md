@@ -2,8 +2,7 @@
 
 [The Journal that Writes Back](https://rhcmoore.github.io/Project1/). 
 
-!["MoooD gif"](https://media.giphy.com/media/ksKF7WxzcdE11dD2gj/giphy.gif)
-<!-- Your browser does not support the video tag. -->
+<img src="https://media.giphy.com/media/ksKF7WxzcdE11dD2gj/giphy.gif" width="500">
 
 ## Getting Started 
 Write to your journal about your day, and include a representative image of your face. After you submit your entry, view a sentiment analysis of your text and an emotional analysis of your facial emotions. How are you feeling today?
