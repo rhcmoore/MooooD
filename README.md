@@ -3,7 +3,7 @@
 [The Journal that Writes Back](https://rhcmoore.github.io/Project1/). 
 
 <video width="100%"  controls>
-  <source src="./img/readVideo.webm">
+  <source src="./img/moodGIF.gif">
 <!-- Your browser does not support the video tag. -->
 </video>
 
