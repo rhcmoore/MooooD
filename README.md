@@ -1,6 +1,6 @@
 # [Mood, the Journal that Writes Back](rhcmoore.github.io/Project1/)
 
-[Mood, the Journal that Writes Back](rhcmoore.github.io/Project1/) is a journal that receives a journal entry and an image of the users face, analyzes the entry through indico and the image through Face++ and returns a[Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). The theme features multiple content sections with an off canvas navigation menu.
+[Mood, the Journal that Writes Back](https://rhcmoore.github.io/MooooD/) is a journal that receives a journal entry and an image of the users face, analyzes the entry through indico and the image through Face++ and returns a[Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). The theme features multiple content sections with an off canvas navigation menu.
 
 ## Usage
 No special features needed to access Moood. Moood can be opened in your default browser.  
